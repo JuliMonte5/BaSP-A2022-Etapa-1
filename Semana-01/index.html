@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head><!--ADD META TAGS-->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,7 +59,7 @@
             </div>
         </aside>
         <main>
-            <article><!-- Who We Are -->
+            <section><!-- Who We Are -->
                 <h2>Who We Are</h2>
                 <p>
                     <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
@@ -81,8 +81,8 @@
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     </h4>
                 </p>
-            </article>
-            <article> <!-- Why Choose Us? -->
+            </section>
+            <section> <!-- Why Choose Us? -->
                 <h2>Why Choose Us?</h2>
                 <section>
                     <h3>Productivity Booster</h3>
@@ -124,8 +124,8 @@
                     </p>
                     <img src="assets/decisionmaking.png" alt="Decision Making">
                 </section>
-            </article>
-            <article> <!-- Functionalities -->
+            </section>
+            <section> <!-- Functionalities -->
                 <h2>Functionalities</h2>
                 <section>
                     <h3>Hours Log</h3>
@@ -159,13 +159,37 @@
                         been the industry's standard.
                     </p>
                 </section>
-            </article>
-            <article> <!-- Contact -->
+            </section>
+            <section> <!-- Contact -->
+                <h2>Contact</h2>
+                <form action="form_submit.php" method="post">
+                    <div>
+                        <label>Name</label>
+                        <input type="text" placeholder="Your Name Here">
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input type="text" placeholder="Your Email Here">
+                    </div>
+                    <div>
+                        <label>Contact Area</label>
+                        <select>
+                            <option value="human resources">Human Resources</option>
+                            <option value="systems">Systems</option>
+                            <option value="communication">Communication</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Message</label>
+                        <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message Here"></textarea>
+                    </div>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </form>
+            </section>
+            <section><!-- Products Enterprise Support -->
     
-            </article>
-            <article><!-- Products Enterprise Support -->
-    
-            </article>
+            </section>
         </main>
         <footer><!-- Social media links -->
         
