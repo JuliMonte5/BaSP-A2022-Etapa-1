@@ -1,7 +1,10 @@
 header {
     background-image: url("../assets/header-backg.png");
-    height: 982px;
-    width: 1288px;
+    height: 900px;
+    width: 1440px;
+    padding: 0px;
+    margin: 0px;
+    border: 0;
 }
 
 p{
@@ -9,25 +12,53 @@ p{
 }
 
 h1 {
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    margin-left: 22px;
+    margin-top: 170px;
     color: #fff;
     font-size: 40px;
-    /*font-family: Roboto;*/
 }
 
 h2 {
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
     color: #fff;
     font-size: 20px;
-    /*font-family: Roboto;*/
+    margin-left: 22px;
+    margin-top: 234px;
 }
 
-header > p {
-    color: #fff;
-    font-size: 16px;
-    /*font-family: Roboto;*/
-}
-
-header > div {
-    margin-left: 76px;
-    padding-left: 22px;
+.frame {
+    position: absolute;
+    width: 481px;
+    height: 900px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    margin-left: 183px;
     background-color: rgba(0, 0, 0, .3);
+}
+/*
+.header-text {
+    width: 366px;
+    height: 199px;
+    margin-right: 93px;
+    margin-left: 22px;
+    border: 0px;
+}*/
+
+
+.pars {
+    position: absolute;
+    color: #fff;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    margin-left: 22px;
+    margin-top: 355px;
 }
