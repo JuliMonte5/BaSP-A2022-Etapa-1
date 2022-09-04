@@ -264,6 +264,21 @@ h3 {
     color: #AACE9B;
 }
 
+.wcu-title {
+    margin-top: 0px;
+}
+
+.wcu-bar {
+    position: absolute;
+    background-color: #D9D9D9;
+    width: 1176px;
+    height: 10px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    margin-left: 57px;
+    margin-top: 47px;
+}
 .wcu-element-1 {
     float: right;
     display: inline;
@@ -353,4 +368,62 @@ h3 {
     background-color: #D9D9D9;
     margin-left: 10px;
     margin-top: 300px;
+}
+
+#functionalities {
+    width: 1288px;
+    height: 635px;
+    display: inline;
+    float: right;
+}
+
+.func-title {
+    margin-top: 40px;
+    margin-left: 35%;
+}
+
+.func-bar {
+    position: absolute;
+    background-color: #D9D9D9;
+    width: 1176px;
+    height: 10px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    margin-left: 57px;
+    margin-top: 84px;
+}
+
+.func-p {
+    width: 380px;
+    height: 72px;
+    color: #000;
+    font-size: 20px;
+}
+
+.func-elem {
+    display: inline-block;
+    width: 40%;
+    margin-right: 104px;
+    margin-bottom: 110px;
+}
+
+.func-elem > img {
+    position: absolute;
+}
+
+.func-subtitle {
+    margin-left: 163px;
+    margin-top: 0px;
+}
+
+.func-elem > p {
+    margin-left: 163px;
+    margin-top: 70px;
+}
+
+#func-elements {
+    height: 453px;
+    width: 1290px;
+    margin-top: 182px;
 }
