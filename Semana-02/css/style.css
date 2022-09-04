@@ -352,7 +352,7 @@ h3 {
 .wcu-p-2 {
     position: absolute;
     color: #000;
-    width: 650px;
+    width: 526px;
     font-size: 30px;
     margin-left: 726px;
     margin-top: 364px;
@@ -370,7 +370,7 @@ h3 {
     margin-top: 300px;
 }
 
-#functionalities {
+.func-con {
     width: 1288px;
     height: 635px;
     display: inline;
@@ -426,4 +426,81 @@ h3 {
     height: 453px;
     width: 1290px;
     margin-top: 182px;
+}
+
+input[type=text], select {
+    display: block;
+    width: 450px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+label, select {
+    display: block;
+    color: #373867;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 1030px;
+    height: 180px;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+.send-button {
+    width: 177px;
+    height: 48px;
+    border: 0px;
+    background-color: #AACE9B;
+    border-radius: 5px;
+    padding: 12px 20px;
+    color: #373867;
+    font-weight: bold;
+}
+
+.send-button > i {
+    margin-right: 10px;
+    color: #373867;
+}
+
+.reset-button {
+    width: 117px;
+    height: 48px;
+    border: 0px;
+    background-color: #f33413;
+    border-radius: 5px;
+    padding: 12px 20px;
+    color: #373867;
+    font-weight: bold;
+    float: right;
+    margin-right: 205px;
+}
+
+.reset-button > i {
+    margin-right: 10px;
+    color: #373867;
+}
+
+form {
+    margin-top: 125px;
+    margin-left: 81px;
+}
+
+#inputs {
+    height: 154px;
+    width: 1030px;
+}
+
+.cont-field {
+    display: inline-block;
+    width: 30%;
+    margin-right: 200px;
+    margin-bottom: 34px;
 }

@@ -142,7 +142,7 @@
                     <img class="wcu-img-2" src="assets/decision-making.png" alt="Decision Making" title="Decision Making">
                 </div>
             </section>
-            <section id="functionalities">
+            <section class="func-con">
                 <h3 class="func-title">Functionalities</h3>
                 <div class="func-bar"></div>
                 <div id="func-elements">
@@ -180,34 +180,37 @@
                     </div>
                 </div>
             </section>
-            <!--<section>
-                <h3>Contact</h3>
+            <section class="func-con">
+                <h3 class="func-title">Contact</h3>
+                <div class="func-bar"></div>
                 <form>
-                    <div>
-                        <label>Name</label>
-                        <input type="text" placeholder="Your Name Here">
+                    <div id="inputs">
+                        <div class="cont-field">
+                            <label class="input-label">Name</label>
+                            <input class="input-field" type="text" placeholder="Your Name Here">
+                        </div>
+                        <div class="cont-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Your Email Here">
+                        </div>
+                        <div class="cont-field">
+                            <select>
+                                <option value="" disabled selected hidden>Contact Area</option>
+                                <option value="human resources">Human Resources</option>
+                                <option value="systems">Systems</option>
+                                <option value="communication">Communication</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <label>Email</label>
-                        <input type="text" placeholder="Your Email Here">
-                    </div>
-                    <div>
-                        <select>
-                            <option value="" disabled selected hidden>Contact Area</option>
-                            <option value="human resources">Human Resources</option>
-                            <option value="systems">Systems</option>
-                            <option value="communication">Communication</option>
-                        </select>
-                    </div>
-                    <div>
+                    <div id="message">
                         <label>Message</label>
                         <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message Here"></textarea>
                     </div>
-                    <input type="submit" value="Send Message">
-                    <input type="reset" value="Reset">
+                    <button class="send-button"><i class="fa-solid fa-envelope"></i>Send Message</button>
+                    <button class="reset-button"><i class="fa-solid fa-xmark"></i></i>Reset</button>
                 </form>
             </section>
-            <section>
+            <!--<section>
                 <img src="assets/prod-ent-supp.png" alt="Background">
                 <div>
                     <h3>Products</h3>
