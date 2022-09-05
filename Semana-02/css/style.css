@@ -48,17 +48,7 @@ aside {
 h3 {
     font-size: 40px;
     color: #000;
-    position: absolute;
-    margin-top: 130px;
-    margin-left: 35%;
 }
-/*
-.pmb-reset {
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-}
-*/
 
 .sidebar-element {
     display: inline-block;
@@ -93,16 +83,8 @@ h3 {
 }
 
 .sideb-logo {
-    display: inline-block;
     width: 152px;
     height: 160px;
-}
-
-.sideb-logo > img {
-    display: inline;
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
 }
 
 .sideb-btn {
@@ -182,40 +164,45 @@ h3 {
     height: 900px;
 }
 
+.hwa-title {
+    margin-top: 130px;
+    margin-left: 35%;
+}
+
 .hwa-bar {
-    position: absolute;
     background-color: #D9D9D9;
     width: 1176px;
     height: 10px;
     margin-left: 57px;
-    margin-top: 175px;
+    margin-top: 8px;
 }
 
 .hwa-p1 {
-    position: absolute;
     border: 1px;
     width: 1176px;
     height: 206px;
     margin-left: 56px;
-    margin-top: 268px;
+    margin-top: 83px;
     font-size: 20px;
     color: #373867;
 }
 
 .hwa-p2 {
-    position: absolute;
     border: 1px;
     width: 1178px;
     height: 195px;
     margin-left: 56px;
-    margin-top: 474px;
     padding-top: 30px;
     font-size: 18px;
     color: #AACE9B;
 }
 
+.wcu-title {
+    margin-top: 16px;
+    margin-left: 35%;
+}
+
 .wcu-bar {
-    position: absolute;
     background-color: #D9D9D9;
     width: 1176px;
     height: 10px;
@@ -224,27 +211,28 @@ h3 {
 }
 .wcu-element-1 {
     float: right;
-    display: inline;
     width: 1288px;
     height: 900px;
 }
 
-.pb-title {
-    margin-left: 10px;
-    margin-top: 247px;
+.text-img-container {
+    width: 1400px;
+    height: 400px;
+}
+
+.pb-text-container-1 {
+    display: inline-block;
+    width: 720px;
+    height: 400px;
 }
 
 .pb-bar {
-    position: absolute;
     width: 720px;
     height: 4px;
     background-color: #286276;
-    margin-left: 10px;
-    margin-top: 300px;
 }
 
 .wcu-bar-1 {
-    position: absolute;
     width: 720px;
     height: 4px;
     background-color: #286276;
@@ -253,18 +241,18 @@ h3 {
 }
 
 .wcu-img-1 {
-    position: absolute;
-    margin-left: 730px;
-    margin-top: 220px;
+    display: inline-block;
+    margin-left: -12px;
+    vertical-align: -40px;
+    margin-top: 163px;
 }
 
 .wcu-p-1 {
-    position: absolute;
     color: #000;
     width: 650px;
     font-size: 30px;
     margin-left: 10px;
-    margin-top: 364px;
+    margin-top: 64px;
 }
 
 .wcu-element-2 {
@@ -275,37 +263,39 @@ h3 {
     background-color: #D9D9D9;
 }
 
-.wt-title {
-    margin-left: 726px;
-    margin-top: 247px;
-}
-
-.wcu-bar-2 {
-    position: absolute;
-    width: 720px;
-    height: 4px;
-    background-color: #fff;
-    margin-left: 580px;
-    margin-top: 300px;
-}
-
-.wcu-img-2 {
-    position: absolute;
+.text-img-container-2 {
     margin-left: 10px;
     margin-top: 220px;
 }
 
+.wt-text-container {
+    display: inline-block;
+    width: 676px;
+    height: 400px;
+}
+
+.wt-title {
+    margin-left: 146px;
+    /*margin-top: 247px;*/
+}
+
+.wcu-bar-2 {
+    width: 720px;
+    height: 4px;
+    background-color: #fff;
+    margin-left: 0px;
+    /*margin-top: 300px;*/
+}
+
 .wcu-p-2 {
-    position: absolute;
     color: #000;
     width: 526px;
     font-size: 30px;
-    margin-left: 726px;
-    margin-top: 364px;
+    margin-left: 146px;
+    margin-top: 64px ;
 }
 
 .ltm-bar {
-    position: absolute;
     width: 720px;
     height: 4px;
     background-color: #D9D9D9;
@@ -326,12 +316,11 @@ h3 {
 }
 
 .func-bar {
-    position: absolute;
     background-color: #D9D9D9;
     width: 1176px;
     height: 10px;
     margin-left: 57px;
-    margin-top: 84px;
+    margin-top: 0px;
 }
 
 .func-p {
@@ -343,29 +332,37 @@ h3 {
 
 .func-elem {
     display: inline-block;
-    width: 40%;
-    margin-right: 104px;
+    width: 41%;
+    margin-right: 70px;
     margin-bottom: 110px;
+    margin-left: 10px;
 }
 
 .func-elem > img {
-    position: absolute;
+    display: inline-block;
+}
+
+.func-text {
+    display: inline-block;
 }
 
 .func-subtitle {
-    margin-left: 163px;
+    font-size: 30px;
+    /*margin-left: 163px;*/
     margin-top: 0px;
 }
 
 .func-elem > p {
-    margin-left: 163px;
-    margin-top: 70px;
+    width: 380px;
+    height: 72px;
+    /*margin-left: 163px;*/
+    margin-top: 13px;
 }
 
 #func-elements {
     height: 453px;
     width: 1290px;
-    margin-top: 182px;
+    margin-top: 88px;
 }
 
 input[type=text], select {
@@ -418,7 +415,6 @@ textarea {
     color: #373867;
     font-weight: bold;
     float: right;
-    margin-right: 205px;
 }
 
 .reset-button > i {
@@ -429,6 +425,7 @@ textarea {
 form {
     margin-top: 125px;
     margin-left: 81px;
+    width: 1053px;
 }
 
 #inputs {
