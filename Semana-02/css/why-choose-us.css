@@ -1,0 +1,97 @@
+.wcu-element-1 {
+    float: right;
+    width: 1288px;
+    height: 900px;
+}
+
+.wcu-title {
+    margin-top: 16px;
+    margin-left: 35%;
+}
+
+.wcu-bar {
+    width: 1176px;
+    height: 10px;
+    margin-left: 57px;
+    margin-top: 47px;
+    background-color: #D9D9D9;
+}
+
+.text-img-container {
+    width: 1400px;
+    height: 400px;
+}
+
+.pb-text-container-1 {
+    display: inline-block;
+    width: 720px;
+    height: 400px;
+    margin-left: 10px;
+}
+
+.pb-bar {
+    width: 720px;
+    height: 4px;
+    background-color: #286276;
+}
+
+.wcu-bar-1 {
+    width: 720px;
+    height: 4px;
+    margin-left: 10px;
+    margin-top: 300px;
+    background-color: #286276;
+}
+
+.wcu-p-1 {
+    width: 650px;
+    margin-left: 10px;
+    margin-top: 64px;
+    color: #000;
+    font-size: 30px;
+}
+
+.wcu-img-1 {
+    display: inline-block;
+    margin-left: -12px;
+    margin-top: 163px;
+    vertical-align: -40px;
+}
+
+.wcu-element-2 {
+    display: inline;
+    float: right;
+    width: 1288px;
+    height: 900px;
+    background-color: #D9D9D9;
+}
+
+.text-img-container-2 {
+    margin-left: 10px;
+    margin-top: 220px;
+}
+
+.wt-text-container {
+    display: inline-block;
+    width: 676px;
+    height: 400px;
+}
+
+.wt-title {
+    margin-left: 146px;
+}
+
+.wcu-bar-2 {
+    width: 676px;
+    height: 4px;
+    margin-left: -10px;
+    background-color: #fff;
+}
+
+.wcu-p-2 {
+    width: 526px;
+    margin-left: 146px;
+    margin-top: 64px ;
+    color: #000;
+    font-size: 30px;
+}

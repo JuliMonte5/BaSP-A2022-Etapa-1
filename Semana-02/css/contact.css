@@ -1,0 +1,106 @@
+.cont-title {
+    margin-top: 40px;
+    margin-left: 40%;
+}
+
+form {
+    width: 1053px;
+    margin-top: 34px;
+    margin-left: 57px;
+}
+
+#inputs {
+    width: 1030px;
+    height: 154px;
+}
+
+.cont-field {
+    display: inline-block;
+    width: 30%;
+    margin-right: 200px;
+    margin-bottom: 34px;
+}
+
+input[type=text], select {
+    display: block;
+    width: 450px;
+    padding: 10px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+label, select {
+    display: block;
+    margin-bottom: 10px;
+    color: #373867;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#message {
+    margin-top: 44px;
+}
+
+textarea {
+    width: 1030px;
+    height: 180px;
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea:focus, input[type=text]:focus, select:focus {
+    outline-color: #373867;
+}
+
+.send-button {
+    width: 177px;
+    height: 48px;
+    padding: 12px 20px;
+    background-color: #AACE9B;
+    border-radius: 5px;
+    color: #373867;
+    font-weight: bold;
+}
+
+.send-button:hover, .reset-button:hover {
+    padding: 12px 20px;
+    border: 2px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #373867;
+    font-weight: bold;
+}
+
+.send-button:hover {
+    border-style: solid;
+    border-color: #373867;
+}
+
+.send-button > i {
+    margin-right: 10px;
+    color: #373867;
+}
+
+.reset-button {
+    float: right;
+    width: 117px;
+    height: 48px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: #f33413;
+    color: #373867;
+    font-weight: bold;
+}
+
+.reset-button > i {
+    margin-right: 10px;
+    color: #373867;
+}
+
+.reset-button:hover {
+    border-style: solid;
+    border-color: #f33413;
+}

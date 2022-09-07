@@ -1,0 +1,44 @@
+.func-title {
+    margin-top: 40px;
+    margin-left: 35%;
+}
+
+#func-elements {
+    width: 1290px;
+    height: 453px;
+    margin-top: 88px;
+}
+
+.func-elem {
+    display: inline-block;
+    width: 43%;
+    margin-right: 70px;
+    margin-bottom: 110px;
+    margin-left: 10px;
+}
+
+.func-elem > img {
+    display: inline-block;
+}
+
+.func-elem > img:hover {
+    transform: scale(1.15, 1.15);
+}
+
+.func-text {
+    display: inline-block;
+    margin-left: 18px;
+}
+
+.func-subtitle {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.func-p {
+    width: 380px;
+    height: 72px;
+    margin-top: 13px;
+    color: #000;
+    font-size: 20px;
+}

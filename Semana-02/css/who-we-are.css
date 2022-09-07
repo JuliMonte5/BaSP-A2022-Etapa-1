@@ -1,0 +1,41 @@
+#who-we-are {
+    display: inline;
+    float: right;
+    width: 1288px;
+    height: 900px;
+}
+
+.hwa-title {
+    margin-top: 130px;
+    margin-left: 35%;
+}
+
+.hwa-bar {
+    width: 1176px;
+    height: 10px;
+    margin-left: 57px;
+    margin-top: 8px;
+    background-color: #D9D9D9;
+}
+
+.hwa-p1 {
+    width: 1176px;
+    height: 206px;
+    margin-left: 56px;
+    margin-top: 83px;
+    border: 1px;
+    font-size: 20px;
+    color: #373867;
+    line-height: 30px;
+}
+
+.hwa-p2 {
+    width: 1178px;
+    height: 195px;
+    margin-left: 56px;
+    padding-top: 30px;
+    border: 1px;
+    font-size: 18px;
+    color: #AACE9B;
+    line-height: 30px;
+}
