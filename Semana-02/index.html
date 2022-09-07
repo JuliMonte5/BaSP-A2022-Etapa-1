@@ -9,40 +9,39 @@
         <meta name="description" content="A service for employees to keep track of the hours they worked on a project">
         <meta name="author" content="Julián Montenegro">
         <title>Trackgenix</title>
-        <!--<link rel="stylesheet" href="css/reset.css">!-->
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/d7c9d962f7.js" crossorigin="anonymous"></script>
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     </head>
     <body>
-        <header id="header" class="sidebar-element">
+        <header class="sidebar-element">
             <div class="frame">
-                <h1  class="pmb-reset">Trackgenix</h1>
+                <h1>Trackgenix</h1>
                 <div class="title-bar"></div>
-                <h2  class="pmb-reset">By GigaTech Software Solutions SA</h2>
+                <h2>By GigaTech Software Solutions SA</h2>
                 <div class="pars">
-                    <p class="par1">
+                    <p>
                         The company GigaTech Software Solutions SA provides software development services to other companies,
                         which have too many employees. Because of this <q>Trackgenix</q> was created.
                     </p>
-                    <p class="par2">
+                    <p>
                         <q>Trackgenix</q> is a web page that facilitates the registration of hours worked by each employee 
                         in each project and provides information to the companies so they can make better decisions.
                     </p>
                 </div>
             </div>
         </header>
-        <aside id="sidebar" class="sidebar-element">
-            <div class="sideb-logo" >
-                <img src="assets/sidebar/logo.png" alt="logo">
+        <aside>
+            <div class="sideb-logo">
                 <a class="sideb-btn" href="#">
-                    <img src="assets/sidebar/oc-sidebar.png" alt="sidebar button">
+                    <i class="fa-solid fa-angle-left"></i>
                 </a>
             </div>
             <div class="sideb-hsl">
                 <div class="sideb-link">
                     <a href="">
-                        <i class="fa-solid fa-house"></i>
+                        <i class="fa-solid fa-house" class="sidebar-orange"></i>
                         <p class="sidebar-orange">Home</p>
                     </a>
                 </div>
@@ -99,7 +98,7 @@
                     when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 </p>
             </section>
-            <section class="why-choose-us">
+            <section id="why-choose-us">
                 <div class="wcu-element-1">
                     <h3 class="wcu-title">Why Choose Us?</h3>
                     <div class="hwa-bar"></div>
@@ -118,7 +117,7 @@
                 </div>
                 <div class="wcu-element-2">
                     <div class="text-img-container-2">
-                        <img class="wcu-img-2" src="assets/work-trac.png" alt="Work Traceability" title="Work Traceability">
+                        <img src="assets/work-trac.png" alt="Work Traceability" title="Work Traceability">
                         <div class="wt-text-container">
                             <h3 class="wt-title">Work Traceability</h3>
                             <div class="wcu-bar-2"></div>
@@ -216,16 +215,16 @@
                             <input class="input-field" type="text" placeholder="Your Name Here">
                         </div>
                         <div class="cont-field">
-                            <label>Email</label>
-                            <input type="text" placeholder="Your Email Here">
-                        </div>
-                        <div class="cont-field">
                             <select>
                                 <option value="" disabled selected hidden>Contact Area</option>
                                 <option value="human resources">Human Resources</option>
                                 <option value="systems">Systems</option>
                                 <option value="communication">Communication</option>
                             </select>
+                        </div>
+                        <div class="cont-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Your Email Here">
                         </div>
                     </div>
                     <div id="message">
