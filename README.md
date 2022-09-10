@@ -17,7 +17,7 @@
     Created the html code for the landing page of the site.
 ### Week 02
     Added styles for the page.
-### Week 02
+### Week 03
     Added flex-box based styles for the page.  
 
 ### Github Pages link:

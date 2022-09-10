@@ -9,17 +9,31 @@ body {
 header {
     display: flex;
     background-image: url(../assets/header-backg.png);
-    height: 100%;
+    flex-basis: 50%;
 }
 
-.frame {
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+.pars {
+    margin-bottom: 40px;
+}
+
+header .frame {
     display: flex;
     background-color: rgba(0, 0, 0, .3);
     backdrop-filter: blur(2px);
     flex-direction: column;
     width: 100%;
-    height: 100%;
     justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .title-bar {
@@ -27,7 +41,27 @@ header {
     height: 2px;
     background-color: #AACE9B;
 }
+
+aside {
+    display: flex;
+    
+}
 /*
 h1,h2, .pars {
     width: 80%;
 }*/
+
+
+
+@media only screen and (max-width: 768px) {
+    aside {
+        order: -1;
+        height: 20px;
+    }
+    aside > div{ 
+        display: none;
+    }
+    #why-choose-us img {
+        display: none;
+    }
+}
