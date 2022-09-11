@@ -1,0 +1,58 @@
+
+.func-con {
+    display: flex;
+    flex-direction: column;
+    flex-basis: content;
+}
+
+.func-title {
+    align-self: center;
+}
+
+#func-elements {
+    height: 453px;
+    /*margin-top: 88px;*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: content;
+}
+
+.func-elem {
+    display: flex;
+    flex-basis: content;
+    width: 43%;
+    margin-right: 70px;
+    margin-bottom: 110px;
+    margin-left: 10px;
+    flex-shrink: 1;
+}
+
+.func-elem > img {
+    order: -1;
+    flex-shrink: 0;
+    max-width: 142px;
+    max-height: 142px;
+}
+
+.func-elem > img:hover {
+    transform: scale(1.15, 1.15);
+}
+
+.func-text {
+    margin-left: 18px;
+}
+
+.func-subtitle {
+    margin-bottom: 20px;
+    font-size: 30px;
+    order: 0;
+}
+
+.func-p {
+    order: 1;
+    width: 380px;
+    height: 72px;
+    margin-top: 13px;
+    color: #000;
+    font-size: 20px;
+}
