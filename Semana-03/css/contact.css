@@ -9,7 +9,7 @@
 
 form {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     flex-basis: content;
 }
 
@@ -17,7 +17,7 @@ form {
     order: -1;
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 80%;
     padding-left: 10px;
     justify-content: space-between;
 }
@@ -33,7 +33,6 @@ form {
 }
 
 input[type=text], select {
-    display: block;
     width: 450px;
     padding: 10px;
     border: 1px solid #373867;
@@ -47,11 +46,14 @@ label, select {
 }
 
 #message {
+    display: flex;
+    flex-direction: column;
     margin-top: 44px;
+    width: 80%;
+    padding-left: 10px;
 }
 
 textarea {
-    width: 1030px;
     height: 180px;
     margin-bottom: 16px;
     padding: 10px;
@@ -62,6 +64,11 @@ textarea {
 
 textarea:focus, input[type=text]:focus, select:focus {
     outline-color: #373867;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 .send-button {
@@ -94,7 +101,6 @@ textarea:focus, input[type=text]:focus, select:focus {
 }
 
 .reset-button {
-    float: right;
     width: 117px;
     height: 48px;
     padding: 12px 20px;

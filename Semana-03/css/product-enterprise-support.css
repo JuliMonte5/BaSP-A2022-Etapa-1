@@ -1,0 +1,35 @@
+#prod-ent-sup {
+    display: flex;
+    justify-content: center;
+    background-image: url(../assets/prod-ent-supp.png);
+    background-size: cover;
+    justify-content: space-evenly;
+}
+
+.pes-element {
+    display: flex;
+    /*align-items: baseline;*/
+    /*margin-right: 100px;*/
+    flex-direction: column;
+    height: 20%;
+}
+
+.pes-title {
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #373867;
+}
+
+
+
+li {
+    list-style-position: inside;
+    margin-bottom: 5px;
+}
+
+.pes-link, li {
+    text-decoration: none;
+    color: #373867;
+    font-size: 12px;
+}
