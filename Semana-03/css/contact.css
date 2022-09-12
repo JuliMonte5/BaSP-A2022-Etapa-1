@@ -11,6 +11,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     flex-basis: content;
+    margin-bottom: 20px;
 }
 
 #inputs {

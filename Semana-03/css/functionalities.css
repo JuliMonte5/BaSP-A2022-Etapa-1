@@ -20,9 +20,9 @@
 .func-elem {
     display: flex;
     flex-basis: content;
-    width: 43%;
-    margin-right: 70px;
-    margin-bottom: 110px;
+    width: 25%;
+    /*margin-right: 70px;
+    margin-bottom: 110px;*/
     margin-left: 10px;
     flex-shrink: 1;
 }

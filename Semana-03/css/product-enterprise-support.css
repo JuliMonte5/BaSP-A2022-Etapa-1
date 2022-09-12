@@ -8,6 +8,7 @@
 
 .pes-element {
     display: flex;
+    margin: 63px 0px 63px 0px;
     /*align-items: baseline;*/
     /*margin-right: 100px;*/
     flex-direction: column;
