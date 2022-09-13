@@ -11,7 +11,7 @@
 
 #func-elements {
     height: 453px;
-    /*margin-top: 88px;*/
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     flex-basis: content;
@@ -20,9 +20,8 @@
 .func-elem {
     display: flex;
     flex-basis: content;
-    width: 25%;
-    /*margin-right: 70px;
-    margin-bottom: 110px;*/
+    margin-right: 70px;
+    margin-bottom: 110px;
     margin-left: 10px;
     flex-shrink: 1;
 }

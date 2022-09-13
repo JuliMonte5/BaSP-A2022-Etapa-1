@@ -1,17 +1,15 @@
 aside {
-    flex-basis: content;
-    /*height: 900px;*/
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     background-color: #fff;
-}
-
-.sidebar-element {
-    display: inline-block;
 }
 
 .sideb-logo {
     width: 152px;
     height: 160px;
     background-image: url(../assets/sidebar/logo.png);
+    flex-shrink: 0;
 }
 
 .sideb-btn {
@@ -29,13 +27,22 @@ aside {
     color: #373867;
 }
 
+div.lower-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 2;
+    justify-content: space-between;
+    padding: 55px 0 55px 0;
+}
+
 .sidebar-orange, i {
     color: #f33413;
 }
 
 .sideb-link {
     display: block;
-    margin-top: 55px;
+    margin-bottom: 40px;
     margin-left: 20px;
 }
 
@@ -53,10 +60,6 @@ aside {
     margin-left: 10px;
 }
 
-.sideb-contact {
-    display: block;
-    margin-top: 200px;
-}
 
 .sideb-contact > p{
     margin-left: 11px;

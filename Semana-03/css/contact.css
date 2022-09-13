@@ -1,6 +1,7 @@
 #contact {
     display: flex;
     flex-direction: column;
+    /*padding-left: 60px;*/
 }
 
 .cont-title {
@@ -38,6 +39,7 @@ input[type=text], select {
     padding: 10px;
     border: 1px solid #373867;
     border-radius: 4px;
+    flex-shrink: 1;
 }
 
 label, select {
