@@ -1,7 +1,6 @@
 #contact {
     display: flex;
     flex-direction: column;
-    /*padding-left: 60px;*/
 }
 
 .cont-title {
@@ -12,11 +11,11 @@ form {
     display: flex;
     flex-wrap: wrap;
     flex-basis: content;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 #inputs {
-    order: -1;
     display: flex;
     flex-wrap: wrap;
     width: 80%;
@@ -121,4 +120,19 @@ textarea:focus, input[type=text]:focus, select:focus {
 .reset-button:hover {
     border-style: solid;
     border-color: #f33413;
+}
+
+@media only screen and (max-width:1200px) {
+    #inputs {
+        justify-content: center;
+    }
+    #inputs div:nth-child(2){
+        order: 1;
+    }
+    #inputs div {
+        width: 100%
+    }
+    select, input[type=text] {
+        width: 100%;
+    }
 }

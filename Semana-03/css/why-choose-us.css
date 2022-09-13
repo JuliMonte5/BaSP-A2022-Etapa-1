@@ -6,10 +6,12 @@
 
 .text-img-container-1, .text-img-container-2 {
     display: flex;
+    padding: 5%;
 }
 
 .text-img-container-1 img {
-    flex-shrink: 2;
+    height: fit-content;
+    width: 50%;
 }
 
 .pb-text-container-1, .wt-text-container {
@@ -31,6 +33,8 @@
 
 .text-img-container-2  img{
     order: -1;
+    width: 50%;
+    height: fit-content;
 }
 
 .pb-bar {

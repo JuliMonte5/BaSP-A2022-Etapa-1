@@ -19,6 +19,10 @@ p, h1, h2, h3, h4, a, li{
     overflow-x: hidden;
 }
 
+#sidebar-mobile {
+    display: none;
+}
+
 .hwa-title, .wcu-title, .func-title, .func-subtitle, .cont-title, .sideb-contact > p, .sidebar-orange, .contact-orange,
 label, input[type=text] {
     font-weight:bolder;

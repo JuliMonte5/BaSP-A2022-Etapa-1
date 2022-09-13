@@ -13,6 +13,7 @@
     height: 453px;
     margin-top: 40px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     flex-basis: content;
 }
@@ -54,4 +55,21 @@
     margin-top: 13px;
     color: #000;
     font-size: 20px;
+}
+
+@media only screen and (max-width:768px) {
+    .func-elem {
+        margin: 0px;
+        margin-bottom: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .func-text {
+        width: 70%;
+        text-align: center;
+    }
+    p.func-p {
+        width: 100%;
+        height: auto;
+    }
 }

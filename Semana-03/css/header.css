@@ -22,10 +22,11 @@ h1, h2, .pars {
 }
 
 .pars {
+    width: 80%;
     margin-left: 22px;
     margin-top: 98px;
     color: #fff;
-    margin-bottom: 100px;
+    margin-bottom: 125px;
 }
 
 .pars > p {
@@ -44,11 +45,11 @@ header .frame {
     padding-left: 10px;
     padding-right: 10px;
     max-width: 480px;
+    min-width: 420px;
+    flex-shrink: 1;
 }
 
 .title-bar {
     height: 2px;
     background-color: #AACE9B;
 }
-
-
