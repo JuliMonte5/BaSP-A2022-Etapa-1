@@ -1,19 +1,20 @@
 #prod-ent-sup {
     display: flex;
     justify-content: center;
+    justify-content: space-evenly;
     background-image: url(../assets/prod-ent-supp.png);
     background-size: cover;
-    justify-content: space-evenly;
 }
 
 .pes-element {
     display: flex;
-    margin: 63px 0px 63px 0px;
     flex-direction: column;
+    margin: 63px 0px;
     height: 20%;
 }
 
-.pes-title {
+.pes-element h3 {
+    align-self: flex-start;
     margin-bottom: 12px;
     font-size: 20px;
     font-weight: bold;
@@ -25,7 +26,7 @@ li {
     margin-bottom: 5px;
 }
 
-.pes-link, li {
+.pes-element ol li a, li {
     text-decoration: none;
     color: #373867;
     font-size: 12px;

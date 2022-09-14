@@ -37,16 +37,15 @@ h1, h2, .pars {
 
 header .frame {
     display: flex;
-    background-color: rgba(0, 0, 0, .3);
-    backdrop-filter: blur(2px);
     flex-direction: column;
     width: 80%;
     height: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
     max-width: 480px;
     min-width: 420px;
-    flex-shrink: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(2px);
 }
 
 .title-bar {

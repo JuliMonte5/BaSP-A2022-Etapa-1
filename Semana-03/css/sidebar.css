@@ -6,13 +6,13 @@ aside {
 }
 
 .sideb-logo {
+    flex-shrink: 0;
     width: 152px;
     height: 160px;
     background-image: url(../assets/sidebar/logo.png);
-    flex-shrink: 0;
 }
 
-.sideb-btn {
+.sideb-logo a {
     position: absolute;
     margin-left: 122px;
     margin-top: 123px;
@@ -20,7 +20,7 @@ aside {
     font-size: 25px;
 }
 
-.sideb-btn > i {
+.sideb-logo a i {
     display: inline;
     width: 14px;
     height: 23px;
@@ -46,11 +46,6 @@ div.lower-container {
     margin-left: 20px;
 }
 
-.sideb-link > a {
-    margin-top: 12px;
-    text-decoration: none;
-}
-
 .sideb-link > a > i{
     display: inline;
 }
@@ -59,7 +54,6 @@ div.lower-container {
     display: inline;
     margin-left: 10px;
 }
-
 
 .sideb-contact > p{
     margin-left: 11px;
@@ -98,12 +92,6 @@ div.lower-container {
 @media only screen and (max-width:1028px) {
     aside {
         display: none;
-    }
-    #why-choose-us img {
-        display: none;
-    }
-    .text-img-container-1, .text-img-container-2 {
-        justify-content: center;
     }
     #sidebar-mobile {
         display: flex;

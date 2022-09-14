@@ -35,7 +35,8 @@ form {
 
 input[type=text], select {
     width: 450px;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border: 1px solid #373867;
     border-radius: 4px;
     flex-shrink: 1;
@@ -68,12 +69,12 @@ textarea:focus, input[type=text]:focus, select:focus {
     outline-color: #373867;
 }
 
-.buttons {
+#message > div {
     display: flex;
     justify-content: space-between;
 }
 
-.send-button {
+#send-button {
     width: 177px;
     height: 48px;
     padding: 12px 20px;
@@ -83,7 +84,7 @@ textarea:focus, input[type=text]:focus, select:focus {
     font-weight: bold;
 }
 
-.send-button:hover, .reset-button:hover {
+#send-button:hover, #reset-button:hover {
     padding: 12px 20px;
     border: 2px;
     border-radius: 5px;
@@ -92,17 +93,17 @@ textarea:focus, input[type=text]:focus, select:focus {
     font-weight: bold;
 }
 
-.send-button:hover {
+#send-button:hover {
     border-style: solid;
     border-color: #373867;
 }
 
-.send-button > i {
+#send-button > i {
     margin-right: 10px;
     color: #373867;
 }
 
-.reset-button {
+#reset-button {
     width: 117px;
     height: 48px;
     padding: 12px 20px;
@@ -112,12 +113,12 @@ textarea:focus, input[type=text]:focus, select:focus {
     font-weight: bold;
 }
 
-.reset-button > i {
+#reset-button > i {
     margin-right: 10px;
     color: #373867;
 }
 
-.reset-button:hover {
+#reset-button:hover {
     border-style: solid;
     border-color: #f33413;
 }
