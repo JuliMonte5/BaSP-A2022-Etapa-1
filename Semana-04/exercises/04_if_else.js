@@ -29,7 +29,7 @@ VII: “Anciano” si es mayor a 75 años.
 console.log('Exercise 4.b');
 
 randomNumber = Math.floor(Math.random() * 100);
-
+/*
 if((randomNumber >=0 ) & (randomNumber < 2)){
     alert('Bebe');
 }
@@ -51,5 +51,5 @@ else if((randomNumber >=61 ) & (randomNumber <= 75)){
 else if(randomNumber > 75){
     alert('Anciano');
 }
-
+*/
 console.log('The age number is:', randomNumber);
