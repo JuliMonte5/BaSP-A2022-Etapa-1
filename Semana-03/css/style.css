@@ -25,6 +25,7 @@ p, h1, h2, h3, h4, a, li{
 h3 {
     align-self: center;
     font-size: 30px;
+    font-weight: bold;
     color: #000;
 }
 
@@ -37,8 +38,10 @@ h3 {
     overflow-x: hidden;
 }
 
-#sidebar-mobile {
-    display: none;
+#page-container i {
+    position: fixed;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 .hwa-title, .wcu-title, .func-title, .func-subtitle, .cont-title, .sideb-contact > p, .sidebar-orange, .contact-orange,
@@ -47,8 +50,20 @@ label, input[type=text] {
     font-family: "Roboto";
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:480px) {
+    h3 {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width:480px) {
     h3 {
         font-size: 40px;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    #page-container i {
+        display: none;
     }
 }

@@ -18,9 +18,13 @@ form {
 #inputs {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 80%;
     padding-left: 10px;
-    justify-content: space-between;
+}
+
+#inputs div {
+    width: 100%;
 }
 
 .cont-field {
@@ -34,7 +38,6 @@ form {
 }
 
 input[type=text], select {
-    width: 450px;
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px solid #373867;
@@ -123,15 +126,18 @@ textarea:focus, input[type=text]:focus, select:focus {
     border-color: #f33413;
 }
 
-@media only screen and (max-width:1200px) {
+@media only screen and (min-width:480px) {
     #inputs {
-        justify-content: center;
+        justify-content: space-between;
     }
     #inputs div:nth-child(2){
         order: 1;
     }
     #inputs div {
-        width: 100%
+        width: 49%
+    }
+    #input-name {
+        margin-right: 5px;
     }
     select, input[type=text] {
         width: 100%;

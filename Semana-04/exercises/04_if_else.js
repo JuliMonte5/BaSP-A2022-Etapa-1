@@ -6,15 +6,13 @@ igual que 0,5 mostrar una alerta con el mensaje “Greater than 0,5” y sino un
 console.log('Exercise 4.a');
 
 var randomNumber = Math.random();
-/*
+
 if(randomNumber >= 0.5){
     alert('Greater than 0,5');    
 }
 else {
     alert('Lower than 0,5');
-}*/
-
-console.log('The random number is:', randomNumber);
+}
 
 /*Exercise 4.b: Crear una variable “Age” que contenga un número entero entre 0 y 100 y muestre los siguientes mensajes de alerta:
 I: “Bebe” si la edad es menor a 2 años;
@@ -29,7 +27,7 @@ VII: “Anciano” si es mayor a 75 años.
 console.log('Exercise 4.b');
 
 randomNumber = Math.floor(Math.random() * 100);
-/*
+
 if((randomNumber >=0 ) & (randomNumber < 2)){
     alert('Bebe');
 }
@@ -51,5 +49,3 @@ else if((randomNumber >=61 ) & (randomNumber <= 75)){
 else if(randomNumber > 75){
     alert('Anciano');
 }
-*/
-console.log('The age number is:', randomNumber);

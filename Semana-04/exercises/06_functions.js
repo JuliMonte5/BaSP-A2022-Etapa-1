@@ -76,7 +76,7 @@ function sumVersionTwo(firstNumber, secondNumber){
         }
     }
     else{
-        alert('Invalid argument(s)')
+        alert('Invalid argument(s)');
         return NaN;
     }
 }
@@ -114,7 +114,7 @@ function sumVersionThree(firstNumber, secondNumber){
             return validateSumIntegerArguments(firstNumber, secondNumber);  
         }
     }
-    else{
+    else {
         alert('Invalid argument(s)')
         return NaN;
     }

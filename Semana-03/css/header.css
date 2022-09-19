@@ -1,13 +1,13 @@
 header {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: fit-content;
     background-image: url(../assets/header-backg.png);
 }
 
 h1 {
     margin-left: 22px;
-    margin-top: 176px;
+    margin-top: 30%;
     font-size: 40px;
 }
 
@@ -17,19 +17,19 @@ h2 {
     font-size: 20px;
 }
 
-h1, h2, .pars {
+h1, h2, #header-frame-paragraphs {
     width: 80%;
 }
 
-.pars {
+#header-frame-paragraphs {
     width: 80%;
     margin-left: 22px;
-    margin-top: 98px;
+    margin-top: 10%;
     color: #fff;
-    margin-bottom: 125px;
+    margin-bottom: 50%;
 }
 
-.pars > p {
+#header-frame-paragraphs > p {
     margin-bottom: 30px;
     line-height: 30px;
     font-weight: lighter;
@@ -39,16 +39,20 @@ h1, h2, .pars {
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: 100%;
     max-width: 480px;
-    min-width: 420px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: rgba(0, 0, 0, .3);
     backdrop-filter: blur(2px);
 }
 
-.title-bar {
+#title-bar {
     height: 2px;
     background-color: #AACE9B;
+}
+
+@media only screen and (min-width: 480px){
+    header {
+        height: 100vh;
+    }
 }

@@ -15,12 +15,12 @@ footer {
 
 .social-media-links{
     display: flex;
-    justify-content: space-around;
+    width: 50%;
+    justify-content: space-evenly;
 }
 
 .social-media-links div{
     display: inline;
-    margin-right: 50px;
 }
 
 #last-link {

@@ -1,5 +1,8 @@
 aside {
-    display: flex;
+    display: none;
+}
+
+aside {
     flex-direction: column;
     height: 100%;
     background-color: #fff;
@@ -88,13 +91,9 @@ aside {
     width: 50%;
 }
 
-@media only screen and (max-width:1028px) {
+@media only screen and (min-width:1024px) {
     aside {
-        display: none;
-    }
-    #sidebar-mobile {
         display: flex;
-        background-color: #d9d9d9;
     }
 }
 
