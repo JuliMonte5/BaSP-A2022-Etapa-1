@@ -5,14 +5,14 @@ aside {
     background-color: #fff;
 }
 
-.sideb-logo {
+#sideb-logo {
     flex-shrink: 0;
     width: 152px;
     height: 160px;
     background-image: url(../assets/sidebar/logo.png);
 }
 
-.sideb-logo a {
+#sideb-logo a {
     position: absolute;
     margin-left: 122px;
     margin-top: 123px;
@@ -20,14 +20,14 @@ aside {
     font-size: 25px;
 }
 
-.sideb-logo a i {
+#sideb-logo a i {
     display: inline;
     width: 14px;
     height: 23px;
     color: #373867;
 }
 
-div.lower-container {
+#lower-container {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -41,7 +41,6 @@ div.lower-container {
 }
 
 .sideb-link {
-    display: block;
     margin-bottom: 40px;
     margin-left: 20px;
 }
