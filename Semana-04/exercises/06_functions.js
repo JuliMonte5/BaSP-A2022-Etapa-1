@@ -54,8 +54,8 @@ resultEcerciseSix = validateInteger(49.9989);
 
 console.log('Answer 6.c:', resultEcerciseSix);
 
-/*Exercise 6.d: A la función suma del ejercicio 6b) agregarle una llamada a la función del ejercicio 6c. y que 
-valide que los números sean enteros. En caso que haya decimales mostrar un alerta con el error y retornar el 
+/*Exercise 6.d: A la función suma del ejercicio 6b) agregarle una llamada a la función del ejercicio 6c. y que
+valide que los números sean enteros. En caso que haya decimales mostrar un alerta con el error y retornar el
 número convertido a entero (redondeado).*/
 
 console.log('Exercise 6.d');
@@ -85,7 +85,7 @@ resultEcerciseSix = sumVersionTwo(30, 50.333);
 
 console.log('Answer 6.d:', resultEcerciseSix);
 
-/*Exercise 6.e: Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función 
+/*Exercise 6.e: Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función
 suma probando que todo siga funcionando igual.*/
 
 console.log('Exercise 6.e');
@@ -111,7 +111,7 @@ function sumVersionThree(firstNumber, secondNumber){
         }
         else {
             alert('Non integer number introduced');
-            return validateSumIntegerArguments(firstNumber, secondNumber);  
+            return validateSumIntegerArguments(firstNumber, secondNumber);
         }
     }
     else {

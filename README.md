@@ -1,5 +1,5 @@
 # Trackgenix
-    - Trackgenix is a web system that helps workers register their work (by informing working hours in projects) 
+    - Trackgenix is a web system that helps workers register their work (by informing working hours in projects)
       in a data storage system.
     -The service has four roles to identify workers: Employee, Employee, Admin and SuperAdmin with different possibilities:
         -Employee: can add hours of work to a certain project.
@@ -16,11 +16,13 @@
 ### Week 01
     Created the html code for the landing page of the site.
 ### Week 02
-    Added styles for the page.
+    Added CSS styles, following the desktop version created in W00 and applying the pixel perfect perfomance.
 ### Week 03
-    Added flex-box based styles for the page.  
-
-### Github Pages link:
-    https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html
+    Added a responsive design for the page created in W02, for versions mobile, tablet and desktop and following the
+    mobile first concept.
+    GithubPages link: https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html
+### Week 04
+    Solved javascript basic problems.
+    GithubPages link: https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html
 
 _By Julian Montenegro_
