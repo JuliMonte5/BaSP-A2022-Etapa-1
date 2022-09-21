@@ -1,6 +1,6 @@
-console.log('--4: Arrays');
+console.log('--4: If-Else');
 
-/*Exercise 4.a: Crear un número aleatorio entre 0 y 1 utilizando la función Math.random(), si el valor es mayor o 
+/*Exercise 4.a: Crear un número aleatorio entre 0 y 1 utilizando la función Math.random(), si el valor es mayor o
 igual que 0,5 mostrar una alerta con el mensaje “Greater than 0,5” y sino un alerta con el mensaje “Lower than 0,5”.*/
 
 console.log('Exercise 4.a');
@@ -28,22 +28,22 @@ console.log('Exercise 4.b');
 
 randomNumber = Math.floor(Math.random() * 100);
 
-if((randomNumber >=0 ) & (randomNumber < 2)){
+if((randomNumber >=0 ) && (randomNumber < 2)){
     alert('Bebe');
 }
-else if((randomNumber >=2 ) & (randomNumber <= 12)){
+else if((randomNumber >=2 ) && (randomNumber <= 12)){
     alert('Niño');
 }
-else if((randomNumber >=13 ) & (randomNumber <= 19)){
+else if((randomNumber >=13 ) && (randomNumber <= 19)){
     alert('Adolescente');
 }
-else if((randomNumber >=20 ) & (randomNumber <= 30)){
+else if((randomNumber >=20 ) && (randomNumber <= 30)){
     alert('Joven');
 }
-else if((randomNumber >=31 ) & (randomNumber <= 60)){
+else if((randomNumber >=31 ) && (randomNumber <= 60)){
     alert('Adulto');
 }
-else if((randomNumber >=61 ) & (randomNumber <= 75)){
+else if((randomNumber >=61 ) && (randomNumber <= 75)){
     alert('Adulto mayor');
 }
 else if(randomNumber > 75){

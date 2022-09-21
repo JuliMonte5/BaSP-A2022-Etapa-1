@@ -29,7 +29,7 @@ h3 {
     color: #000;
 }
 
-#page-container {
+#main-footer-container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -38,7 +38,7 @@ h3 {
     overflow-x: hidden;
 }
 
-#page-container i {
+#main-footer-container i {
     position: fixed;
     margin-top: 5px;
     margin-left: 5px;
@@ -63,7 +63,7 @@ label, input[type=text] {
 }
 
 @media only screen and (min-width:1024px) {
-    #page-container i {
+    #main-footer-container i {
         display: none;
     }
 }

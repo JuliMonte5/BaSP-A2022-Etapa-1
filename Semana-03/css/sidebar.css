@@ -1,21 +1,17 @@
 aside {
     display: none;
-}
-
-aside {
     flex-direction: column;
     height: 100%;
     background-color: #fff;
 }
 
-#sideb-logo {
-    flex-shrink: 0;
+#sidebar-logo {
     width: 152px;
     height: 160px;
     background-image: url(../assets/sidebar/logo.png);
 }
 
-#sideb-logo a {
+#sidebar-logo a {
     position: absolute;
     margin-left: 122px;
     margin-top: 123px;
@@ -23,7 +19,7 @@ aside {
     font-size: 25px;
 }
 
-#sideb-logo a i {
+#sidebar-logo a i {
     display: inline;
     width: 14px;
     height: 23px;
@@ -43,21 +39,21 @@ aside {
     color: #f33413;
 }
 
-.sideb-link {
+.sidebar-link {
     margin-bottom: 40px;
     margin-left: 20px;
 }
 
-.sideb-link > a > i{
+.sidebar-link > a > i{
     display: inline;
 }
 
-.sideb-link > a > p{
+.sidebar-link > a > p{
     display: inline;
     margin-left: 10px;
 }
 
-.sideb-contact > p{
+#sidebar-contact > p{
     margin-left: 11px;
     font-size: 14px;
     text-decoration-line: underline;

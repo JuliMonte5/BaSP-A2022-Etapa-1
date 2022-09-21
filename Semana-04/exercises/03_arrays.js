@@ -1,7 +1,7 @@
 console.log('--2: Arrays');
 
 /*Exercise 3.a: Dado el siguiente array: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",
- "Septiembre", "Octubre", "Noviembre", "Diciembre"] mostrar por consola los 
+ "Septiembre", "Octubre", "Noviembre", "Diciembre"] mostrar por consola los
  meses 5 y 11 (utilizar console.log).*/
 
  console.log('Exercise 3.a');
@@ -9,7 +9,7 @@ console.log('--2: Arrays');
 var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",
  "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
- console.log('Answer 3.a:\nMes 5:', months[4], '\nMes 11:', months[10]);
+ console.log('Answer 3.a:\nMonth 5:', months[4], '\nMonth 11:', months[10]);
 
 /*Exercise 3.b: Ordenar el array de meses alfabéticamente y mostrarlo por consola (utilizar sort).*/
 
@@ -39,7 +39,7 @@ months.pop();
 
 console.log('Answer 3.d:\nMonths: ', months);
 
-/*Exercise 3.d: Invertir el orden del array (utilizar reverse).*/
+/*Exercise 3.e: Invertir el orden del array (utilizar reverse).*/
 
 console.log('Exercise 3.e');
 
@@ -47,7 +47,7 @@ months.reverse();
 
 console.log('Answer 3.e:\nMonths: ', months);
 
-/*Exercise 3.d: Unir todos los elementos del array en un único string donde cada mes este separado por un 
+/*Exercise 3.f: Unir todos los elementos del array en un único string donde cada mes este separado por un
 guión - (utilizar join).*/
 
 console.log('Exercise 3.f');

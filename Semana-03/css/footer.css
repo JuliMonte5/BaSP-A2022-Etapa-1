@@ -13,13 +13,13 @@ footer {
     padding: 50px 0px;
 }
 
-.social-media-links{
+#social-media-links{
     display: flex;
     width: 50%;
     justify-content: space-evenly;
 }
 
-.social-media-links div{
+#social-media-links div{
     display: inline;
 }
 

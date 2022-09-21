@@ -31,10 +31,6 @@
     font-size: 20px;
 }
 
-#why-choose-us img {
-    display: none;
-}
-
 .text-img-container-1 img {
     height: fit-content;
     width: 50%;
@@ -60,6 +56,10 @@
     order: -1;
     width: 50%;
     height: fit-content;
+}
+
+#why-choose-us img {
+    display: none;
 }
 
 @media only screen and (min-width:480px) {

@@ -42,21 +42,12 @@ input[type=text], select {
     padding-bottom: 10px;
     border: 1px solid #373867;
     border-radius: 4px;
-    flex-shrink: 1;
 }
 
 label, select {
     color: #373867;
     font-size: 14px;
     font-weight: bold;
-}
-
-#message {
-    display: flex;
-    flex-direction: column;
-    margin-top: 44px;
-    width: 80%;
-    padding-left: 10px;
 }
 
 textarea {
@@ -66,6 +57,14 @@ textarea {
     border: 1px solid #373867;
     border-radius: 4px;
     font-size: 14px;
+}
+
+#message {
+    display: flex;
+    flex-direction: column;
+    margin-top: 44px;
+    width: 80%;
+    padding-left: 10px;
 }
 
 textarea:focus, input[type=text]:focus, select:focus {

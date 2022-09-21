@@ -1,7 +1,6 @@
 header {
     display: flex;
     justify-content: center;
-    height: fit-content;
     background-image: url(../assets/header-backg.png);
 }
 
@@ -12,6 +11,7 @@ h1 {
 }
 
 h2 {
+    margin-bottom: 22px;
     margin-left: 22px;
     margin-top: 17px;
     font-size: 20px;
@@ -21,24 +21,15 @@ h1, h2, #header-frame-paragraphs {
     width: 80%;
 }
 
-#header-frame-paragraphs {
+#header-container{
+    height: fit-content;
     width: 80%;
-    margin-left: 22px;
-    margin-top: 10%;
-    color: #fff;
-    margin-bottom: 50%;
 }
 
-#header-frame-paragraphs > p {
-    margin-bottom: 30px;
-    line-height: 30px;
-    font-weight: lighter;
-}
-
-#header-frame {
+#header-container > div {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    height: 100%;
     max-width: 480px;
     padding-left: 10px;
     padding-right: 10px;
@@ -51,8 +42,23 @@ h1, h2, #header-frame-paragraphs {
     background-color: #AACE9B;
 }
 
-@media only screen and (min-width: 480px){
-    header {
+#header-frame-paragraphs {
+    width: 80%;
+    margin-left: 22px;
+    color: #fff;
+}
+
+#header-frame-paragraphs > p {
+    margin-bottom: 30px;
+    line-height: 20px;
+    font-weight: lighter;
+}
+
+ @media only screen and (min-width: 480px){
+    #header-container{
         height: 100vh;
     }
-}
+    #header-frame-paragraphs > p {
+        line-height: 30px;
+    }
+ }
