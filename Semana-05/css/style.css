@@ -1,0 +1,70 @@
+/* main styles archive, for body, header, common text styles and other common stylings*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+p, h1, h2, h3, h4, a, li{
+    color: #fff;
+    font-family: 'Roboto';
+}
+
+h3 {
+    align-self: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+}
+
+#main-footer-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#main-footer-container i {
+    position: fixed;
+    color: #f33413;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.hwa-title, .wcu-title, .func-title, .func-subtitle, .cont-title, .sideb-contact > p, .sidebar-orange, .contact-orange,
+label, input[type=text] {
+    font-weight:bolder;
+    font-family: "Roboto";
+}
+
+@media only screen and (min-width:480px) {
+    h3 {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width:480px) {
+    h3 {
+        font-size: 40px;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    #main-footer-container i {
+        display: none;
+    }
+}

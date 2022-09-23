@@ -1,0 +1,144 @@
+#contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.cont-title {
+    align-self: center;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: content;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    padding-left: 10px;
+}
+
+#inputs div {
+    width: 100%;
+}
+
+.cont-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#contact-area {
+    justify-content: flex-end;
+}
+
+input[type=text], select {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+label, select {
+    color: #373867;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+textarea {
+    height: 180px;
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#message {
+    display: flex;
+    flex-direction: column;
+    margin-top: 44px;
+    width: 80%;
+    padding-left: 10px;
+}
+
+textarea:focus, input[type=text]:focus, select:focus {
+    outline-color: #373867;
+}
+
+#message > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#send-button {
+    width: 177px;
+    height: 48px;
+    padding: 12px 20px;
+    background-color: #AACE9B;
+    border-radius: 5px;
+    color: #373867;
+    font-weight: bold;
+}
+
+#send-button:hover, #reset-button:hover {
+    padding: 12px 20px;
+    border: 2px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #373867;
+    font-weight: bold;
+}
+
+#send-button:hover {
+    border-style: solid;
+    border-color: #373867;
+}
+
+#send-button > i {
+    margin-right: 10px;
+    color: #373867;
+}
+
+#reset-button {
+    width: 117px;
+    height: 48px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: #f33413;
+    color: #373867;
+    font-weight: bold;
+}
+
+#reset-button > i {
+    margin-right: 10px;
+    color: #373867;
+}
+
+#reset-button:hover {
+    border-style: solid;
+    border-color: #f33413;
+}
+
+@media only screen and (min-width:480px) {
+    #inputs {
+        justify-content: space-between;
+    }
+    #inputs div:nth-child(2){
+        order: 1;
+    }
+    #inputs div {
+        width: 49%
+    }
+    #input-name {
+        margin-right: 5px;
+    }
+    select, input[type=text] {
+        width: 100%;
+    }
+}

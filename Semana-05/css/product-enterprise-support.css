@@ -1,0 +1,39 @@
+#product-enterprise-support {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    background-image: url(../assets/prod-ent-supp.png);
+    background-size: cover;
+}
+
+.pes-element {
+    display: flex;
+    flex-direction: column;
+    margin: 63px 0px;
+    height: 20%;
+}
+
+.pes-element h3 {
+    align-self: flex-start;
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #373867;
+}
+
+li {
+    list-style-position: inside;
+    margin-bottom: 5px;
+}
+
+.pes-element ol li a, li {
+    text-decoration: none;
+    color: #373867;
+    font-size: 12px;
+}
+
+@media only screen and (min-width: 1024px){
+    .pes-element ol li a {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,81 @@
+aside {
+    display: none;
+}
+
+@media only screen and (min-width:1024px) {
+    aside {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: #fff;
+    }
+    #sidebar-logo {
+        width: 152px;
+        height: 160px;
+        background-image: url(../assets/sidebar/logo.png);
+    }
+    #sidebar-logo a {
+        position: absolute;
+        margin-left: 122px;
+        margin-top: 123px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+    #sidebar-logo a i {
+        display: inline;
+        width: 14px;
+        height: 23px;
+        color: #373867;
+    }
+    #lower-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 2;
+        justify-content: space-between;
+        padding: 55px 0 55px 0;
+    }
+    .sidebar-orange, i {
+        color: #f33413;
+    }
+    .sidebar-link {
+        margin-bottom: 40px;
+        margin-left: 20px;
+    }
+    .sidebar-link > a > i{
+        display: inline;
+    }
+    .sidebar-link > a > p{
+        display: inline;
+        margin-left: 10px;
+    }
+    #sidebar-contact > p{
+        margin-left: 11px;
+        font-size: 14px;
+        text-decoration-line: underline;
+        color: #f33413;
+    }
+    .contact-orange {
+        display: inline;
+        color: #f33413;
+        font-size: 10px;
+        text-align: center;
+        vertical-align: 5px;
+    }
+    .contact-element {
+        width: 152px;
+        margin-top: 20px;
+    }
+    .contact-element > i {
+        display: inline;
+        margin-left: 10px;
+    }
+    #adress > i {
+        vertical-align: 18px;
+    }
+    #adress > p {
+        display: inline-block;
+        width: 50%;
+    }
+}
+
