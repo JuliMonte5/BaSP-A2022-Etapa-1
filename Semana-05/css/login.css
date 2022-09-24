@@ -46,6 +46,12 @@ h1{
     font-weight: bold;
 }
 
+#buttons a {
+    text-decoration: none;
+    color: #373867;
+    font-weight: bold;
+}
+
 #buttons button:hover {
     padding: 12px 20px;
     border: 2px;
@@ -53,9 +59,21 @@ h1{
     background-color: #fff;
     color: #373867;
     font-weight: bold;
-}
-
-#buttons button:hover {
     border-style: solid;
     border-color: #373867;
+}
+
+.font-red {
+    display: none;
+    color: #F33413;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-flex {
+    display: flex;
 }

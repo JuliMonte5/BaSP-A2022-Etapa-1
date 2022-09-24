@@ -40,13 +40,13 @@
                         </a>
                     </div>
                     <div class="sidebar-link">
-                        <a href="#" title="Sign Up">
+                        <a href="../views/signup.html" title="Sign Up">
                             <i class="fa-solid fa-user"></i>
                             <p class="sidebar-orange">Sign Up</p>
                         </a>
                     </div>
                     <div class="sidebar-link">
-                        <a href="#" title="Login">
+                        <a href="../views/login.html" title="Login">
                             <i class="fa-solid fa-user"></i>
                             <p class="sidebar-orange">Login</p>
                         </a>
@@ -64,15 +64,19 @@
                     <div id="inputs">
                         <div class="cont-field">
                             <label>Email</label>
-                            <input type="text" placeholder="Your Email Here">
+                            <input name="Email" type="text" placeholder="Your Email Here">
+                            <p class="font-red">Invalid email format</p>
+                            <p class="font-red">This field is required</p>
                         </div>
                         <div class="cont-field">
                             <label>Password</label>
-                            <input type="password" placeholder="Your Password Here">
+                            <input name="Password" type="password" placeholder="Your Password Here">
+                            <p class="font-red">Invalid password format</p>
+                            <p class="font-red">This field is required</p>
                         </div>
                         <div id="buttons">
                             <button></i>Login</button>
-                            <button></i></i>Go Back</button>
+                            <button><a href="../views/index.html"></i></i>Go Back</a></button>
                         </div>
                     </div>
                 </form>
