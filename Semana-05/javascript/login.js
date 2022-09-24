@@ -1,10 +1,8 @@
 window.onload = function() {
     var validateEmailInput, validatePasswordInput, emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;;
-    var inputFields = document.getElementsByTagName("input");
-    var contactFields = document.getElementsByClassName("cont-field");
     var pErrors = document.getElementsByClassName("font-red");
-    var emailField = document.getElementsByName("Email");
-    var passwordField = document.getElementsByName("Password");
+    var emailField = document.getElementsByName("email");
+    var passwordField = document.getElementsByName("password");
     var passwordInput;
     var emailInput;
 
@@ -72,5 +70,4 @@ window.onload = function() {
             alert('Invalid inputs, please check');
         }
     }
-    //Go Back Button
 }

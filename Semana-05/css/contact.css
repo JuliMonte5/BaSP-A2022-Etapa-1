@@ -37,7 +37,7 @@ form {
     justify-content: flex-end;
 }
 
-input[type=text], input[type=password], select {
+input[type=text], input[type=password], select, input[type=date] {
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px solid #373867;
@@ -67,7 +67,7 @@ textarea {
     padding-left: 10px;
 }
 
-textarea:focus, input[type=text]:focus, input[type=password]:focus, select:focus {
+textarea:focus, input[type=text]:focus, input[type=password]:focus, select:focus, input[type=date]:focus {
     outline-color: #373867;
 }
 
