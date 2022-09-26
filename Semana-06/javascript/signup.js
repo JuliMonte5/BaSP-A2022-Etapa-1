@@ -319,4 +319,73 @@ window.onload = function() {
             locationH2[0].remove();
         }
     }
+
+    //postcode validation
+    postcodeField[0].onblur = function(){
+        postcodeValue = postcodeField[0].value.trim();
+        var validate;
+        var emptyField = createEmptyField();
+        var errorMessage = createErrorMessage('postcode');
+
+        if((postcodeValue.length >= 4) && (postcodeValue.length <= 5)){
+            for(var i = 0; i < postcodeValue.length; i++){
+                if((postcodeValue.charCodeAt(i) >= 48) && (postcodeValue.charCodeAt(i) <= 57)){
+                    validate = true;
+                }
+                else {
+                    validate = false;
+                    break;
+                }
+            }
+        }
+        else {
+            validate = false;
+        }
+
+        if(!validate && (postcodeValue != '')){
+            postcodeField[0].insertAdjacentElement("afterend", errorMessage);
+        }
+        else if(postcodeValue == ''){
+            postcodeField[0].insertAdjacentElement("afterend", emptyField);
+        }
+    }
+
+    postcodeField[0].onfocus = function(){
+        postcodeField[0].removeAttribute("placeholder");
+        var postcodeH2 = document.getElementById("postcode").getElementsByTagName("h2");
+        if(postcodeH2 != null){
+            postcodeH2[0].remove();
+        }
+    }
+
+    //email validation
+    emailField[0].onblur = function() {
+        var validate;
+        var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+        var emptyField = createEmptyField();
+        var errorMessage = createErrorMessage('postcode');
+        emailValue = emailField[0].value.trim();
+
+        if (emailValue.match(emailExpression)){
+            validate = true;
+        }
+        else {
+            validate = false;
+        }
+
+        if(!validate && (emailValue != '')){
+            emailField[0].insertAdjacentElement("afterend", errorMessage);
+        }
+        else if(emailValue == ''){
+            emailField[0].insertAdjacentElement("afterend", emptyField);
+        }
+    }
+
+    emailField[0].onfocus = function(){
+        emailField[0].removeAttribute("placeholder");
+        var emailH2 = document.getElementById("email").getElementsByTagName("h2");
+        if(emailH2 != null){
+            emailH2[0].remove();
+        }
+    }
 }
