@@ -45,21 +45,21 @@ window.onload = function() {
 
     //function to create error message
     function createErrorMessage(fieldName){
-        var nameError = document.createElement("h2");
-        nameError.innerHTML = "Invalid " + fieldName + " format";
-        nameError.classList.add("display-flex");
-        return nameError;
+        var errorMessage = document.createElement("h2");
+        errorMessage.innerHTML = "Invalid " + fieldName + " format";
+        errorMessage.classList.add("display-flex");
+        return errorMessage;
     }
 
     //name validation
     nameField[0].onblur = function(){
         var emptyField = createEmptyField();
-        var nameError = createErrorMessage('name');
+        var errorMessage = createErrorMessage('name');
 
         nameValue = nameField[0].value;
 
         if((!threeLetters(nameValue)) && (nameValue != '')){
-            nameField[0].insertAdjacentElement("afterend", nameError);
+            nameField[0].insertAdjacentElement("afterend", errorMessage);
         }
         else if(nameValue == ''){
             nameField[0].insertAdjacentElement("afterend", emptyField);
@@ -77,12 +77,12 @@ window.onload = function() {
     //last name validation
     lastNameField[0].onblur = function(){
         var emptyField = createEmptyField();
-        var nameError = createErrorMessage('last name');
+        var errorMessage = createErrorMessage('last name');
 
         lastNameValue = lastNameField[0].value;
 
         if((!threeLetters(lastNameValue)) && (lastNameValue != '')){
-            lastNameField[0].insertAdjacentElement("afterend", nameError);
+            lastNameField[0].insertAdjacentElement("afterend", errorMessage);
         }
         else if(lastNameValue == ''){
             lastNameField[0].insertAdjacentElement("afterend", emptyField);
@@ -99,6 +99,39 @@ window.onload = function() {
 
     //DNI verification
     dniField[0].onblur = function (){
-        
+        var validate;
+        var emptyField = createEmptyField();
+        var errorMessage = createErrorMessage('dni');
+
+        dniValue = dniField[0].value;
+        if(dniValue.length >= 7){
+            for(var i = 0; i < dniValue.length; i++){
+                if((dniValue.charCodeAt(i) >= 48) && (dniValue.charCodeAt(i) <= 57)){
+                    validate = true;
+                }
+                else {
+                    validate = false;
+                    break;
+                }
+            }
+        }
+        else {
+            validate = false;
+        }
+
+        if(!validate && (dniValue != '')){
+            dniField[0].insertAdjacentElement("afterend", errorMessage);
+        }
+        else if(dniValue == ''){
+            dniField[0].insertAdjacentElement("afterend", emptyField);
+        }
+    }
+
+    dniField[0].onfocus = function(){
+        dniField[0].removeAttribute("placeholder");
+        var dniH2 = document.getElementById("dni").getElementsByTagName("h2");
+        if(dniH2 != null){
+            dniH2[0].remove();
+        }
     }
 }
