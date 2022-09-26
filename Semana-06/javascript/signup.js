@@ -134,4 +134,57 @@ window.onload = function() {
             dniH2[0].remove();
         }
     }
+
+    //Birthday validation
+    birthdayField[0].onblur = function(){
+        var emptyField = createEmptyField();
+        if((birthdayField[0].value) == ''){
+            birthdayField[0].insertAdjacentElement("afterend", emptyField);
+        }
+    }
+
+    birthdayField[0].onfocus = function (){
+        var birthdayH2 = document.getElementById("birthday").getElementsByTagName("h2");
+        if(birthdayH2 != null){
+            birthdayH2[0].remove();
+        }
+    }
+
+    //Phone Number validation
+    phoneNumberField[0].onblur = function(){
+        var validate;
+        var emptyField = createEmptyField();
+        var errorMessage = createErrorMessage('phone number');
+
+        phoneNumberValue = phoneNumberField[0].value;
+        if(phoneNumberValue.length == 10){
+            for(var i = 0; i < phoneNumberValue.length; i++){
+                if((phoneNumberValue.charCodeAt(i) >= 48) && (phoneNumberValue.charCodeAt(i) <= 57)){
+                    validate = true;
+                }
+                else {
+                    validate = false;
+                    break;
+                }
+            }
+        }
+        else {
+            validate = false;
+        }
+
+        if(!validate && (phoneNumberValue != '')){
+            phoneNumberField[0].insertAdjacentElement("afterend", errorMessage);
+        }
+        else if(phoneNumberValue == ''){
+            phoneNumberField[0].insertAdjacentElement("afterend", emptyField);
+        }
+    }
+
+    phoneNumberField[0].onfocus = function(){
+        phoneNumberField[0].removeAttribute("placeholder");
+        var phoneNumberH2 = document.getElementById("phone-number").getElementsByTagName("h2");
+        if(phoneNumberH2 != null){
+            phoneNumberH2[0].remove();
+        }
+    }
 }
