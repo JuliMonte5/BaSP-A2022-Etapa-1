@@ -20,20 +20,26 @@ window.onload = function() {
     }
 
     //validate alphanumeric
-    function validateAlphanumeric(inputString){
+    function validateAlphanumeric(inputString, minlength){
         var validate;
-        for(var i = 0; i < inputString.length;i++){
-            if((inputString.charCodeAt(i) >= 97) && (inputString.charCodeAt(i) <= 122)){
-                validate = true;
-            }
-            else if((inputString.charCodeAt(i) >= 48) && ((inputString.charCodeAt(i) <= 57))){
-                validate = true;
-            }
-            else {
-                validate = false;
-                break;
+        if(inputString.length >= minlength){
+            for(var i = 0; i < inputString.length;i++){
+                if((inputString.charCodeAt(i) >= 97) && (inputString.charCodeAt(i) <= 122)){
+                    validate = true;
+                }
+                else if((inputString.charCodeAt(i) >= 48) && ((inputString.charCodeAt(i) <= 57))){
+                    validate = true;
+                }
+                else {
+                    validate = false;
+                    break;
+                }
             }
         }
+        else{
+            validate = false;
+        }
+        
         return validate;
     }
 
@@ -263,7 +269,7 @@ window.onload = function() {
         }
 
         inputNoSpaces = adressValue.split(' ').join('');
-        validate = (validateAlphanumeric(inputNoSpaces)) && (inputNoSpaces.length >= 5) && ((spacesIndex.length - 1) > 0);
+        validate = (validateAlphanumeric(inputNoSpaces, 5)) && ((spacesIndex.length - 1) > 0);
 
         if(!validate && (adressValue != '')){
             adressField[0].insertAdjacentElement("afterend", errorMessage);
@@ -279,6 +285,38 @@ window.onload = function() {
         var adressH2 = document.getElementById("adress").getElementsByTagName("h2");
         if(adressH2 != null){
             adressH2[0].remove();
+        }
+    }
+
+    //location validation
+    locationField[0].onblur = function(){
+        var validate;
+        var inputNoSpaces;
+        var lettersCount = 0;
+        var locationValue = locationField[0].value.trim();
+        var inputNoSpaces = locationValue.split(' ').join('');
+        var emptyField = createEmptyField();
+        var errorMessage = createErrorMessage('location');
+        for(var i = 0; i < locationValue.length; i++){
+            if((locationValue.charCodeAt(i) >= 97) && (locationValue.charCodeAt(i) <= 122)){
+                lettersCount++;
+            }
+        }
+        validate = (validateAlphanumeric(inputNoSpaces, 3)) && (lettersCount >= 3);
+
+        if(!validate && (locationValue != '')){
+            locationField[0].insertAdjacentElement("afterend", errorMessage);
+        }
+        else if(locationValue == ''){
+            locationField[0].insertAdjacentElement("afterend", emptyField);
+        }
+    }
+
+    locationField[0].onfocus = function(){
+        locationField[0].removeAttribute("placeholder");
+        var locationH2 = document.getElementById("location").getElementsByTagName("h2");
+        if(locationH2 != null){
+            locationH2[0].remove();
         }
     }
 }
