@@ -37,16 +37,18 @@ window.onload = function() {
         pErrors[3].classList.remove("display-flex");
     }
     passwordField[0].onblur = function() {
-        passwordInput = (passwordField[0].value).toLowerCase();
-        for(var i = 0; i < passwordInput.length;i++){
-            if((passwordInput.charCodeAt(i) >= 97) && (passwordInput.charCodeAt(i) <= 122)){
+        passwordInput = passwordField[0].value;
+        var passwordInputAux = (passwordField[0].value).toLowerCase();
+        for(var i = 0; i < passwordInputAux.length;i++){
+            if((passwordInputAux.charCodeAt(i) >= 97) && (passwordInputAux.charCodeAt(i) <= 122)){
                 validatePasswordInput = true;
             }
-            else if((passwordInput.charCodeAt(i) >= 48) && ((passwordInput.charCodeAt(i) <= 57))){
+            else if((passwordInputAux.charCodeAt(i) >= 48) && ((passwordInputAux.charCodeAt(i) <= 57))){
                 validatePasswordInput = true;
             }
             else {
                 validatePasswordInput = false;
+                break;
             }
         }
 
@@ -60,7 +62,7 @@ window.onload = function() {
     }
 
     //Buttons Logic
-    var loginButton = document.querySelector("button:nth-child(1)");
+    var loginButton = document.querySelector("button");
     loginButton.onclick = function(e){
         e.preventDefault();
         if(validateEmailInput && validatePasswordInput){
