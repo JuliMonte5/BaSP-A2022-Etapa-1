@@ -113,12 +113,20 @@ window.onload = function() {
 
     //name validation
     nameField[0].onblur = function(){
+        var validate;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('name');
 
         nameValue = nameField[0].value;
 
-        if((!threeLetters(nameValue)) && (nameValue != '')){
+        validate = threeLetters(nameValue, 3);
+        if(validate){
+            if(nameValue[0].toUpperCase() != nameValue[0]){
+                validate = false;
+            }
+        }
+
+        if((!validate) && (nameValue != '')){
             nameField[0].insertAdjacentElement("afterend", errorMessage);
         }
         else if(nameValue == ''){
@@ -136,12 +144,19 @@ window.onload = function() {
 
     //last name validation
     lastNameField[0].onblur = function(){
+        var validate;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('last name');
 
         lastNameValue = lastNameField[0].value;
+        validate = threeLetters(lastNameValue, 3);
+        if(validate){
+            if(lastNameValue[0].toUpperCase() != lastNameValue[0]){
+                validate = false;
+            }
+        }
 
-        if((!threeLetters(lastNameValue)) && (lastNameValue != '')){
+        if((!validate) && (lastNameValue != '')){
             lastNameField[0].insertAdjacentElement("afterend", errorMessage);
         }
         else if(lastNameValue == ''){
@@ -229,6 +244,10 @@ window.onload = function() {
             }
         }
         else {
+            validate = false;
+        }
+        if(validate){
+            if(phoneNumberValue[0] > 3)
             validate = false;
         }
 
