@@ -39,7 +39,6 @@ window.onload = function() {
         else{
             validate = false;
         }
-        
         return validate;
     }
 
@@ -251,25 +250,21 @@ window.onload = function() {
 
     //Adress validation
     adressField[0].onblur = function(){
-        var spacesIndex = [];
-        var stringSlice = [];
-        var inputNoSpaces = '';
-        var index = 1;
+        var inputNoSpaces;
         var validate;
+        var spaceCounter = 0;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('adress');
-        spacesIndex[0] = 0;
-        adressValue = adressField[0].value.trim();
+        adressValue = adressField[0].value;
         
         for(var i = 0; i < adressValue.length; i++){
             if(adressValue[i] == ' '){
-                spacesIndex[index] = i;
-                index++;
+                spaceCounter++;
             }
         }
 
         inputNoSpaces = adressValue.split(' ').join('');
-        validate = (validateAlphanumeric(inputNoSpaces, 5)) && ((spacesIndex.length - 1) > 0);
+        validate = (validateAlphanumeric(inputNoSpaces, 5)) && (spaceCounter > 0);
 
         if(!validate && (adressValue != '')){
             adressField[0].insertAdjacentElement("afterend", errorMessage);
@@ -388,4 +383,62 @@ window.onload = function() {
             emailH2[0].remove();
         }
     }
+
+    //Password validation
+    passwordField[0].onblur = function (){
+        var emptyField = createEmptyField();
+        var errorMessage = createErrorMessage('password');
+        passwordValue = passwordField[0].value;
+
+        var validate = validateAlphanumeric(passwordValue, 8);
+
+        if(!validate && (passwordValue != '')){
+            passwordField[0].insertAdjacentElement("afterend", errorMessage);
+        }
+        else if(passwordValue == ''){
+            passwordField[0].insertAdjacentElement("afterend", emptyField);
+        }
+    }
+
+    passwordField[0].onfocus = function(){
+        passwordField[0].removeAttribute("placeholder");
+        var passwordH2 = document.getElementById("password").getElementsByTagName("h2");
+        if(passwordH2 != null){
+            passwordH2[0].remove();
+        }
+    }
+
+    //repeat password validation
+    repeatPasswordField[0].onblur = function(){
+        repeatPasswordValue = repeatPasswordField[0].value;
+        var validate;
+        var emptyField = createEmptyField();
+        var errorMessage = document.createElement("h2");
+        errorMessage.innerHTML = "The passwords do not match";
+        errorMessage.classList.add("display-flex");
+
+        if(repeatPasswordValue == passwordValue){
+            validate = true;
+        }
+        else{
+            validate = false;
+        }
+
+        if(!validate && (repeatPasswordValue != '')){
+            repeatPasswordField[0].insertAdjacentElement("afterend", errorMessage);
+        }
+        else if(repeatPasswordValue == ''){
+            repeatPasswordField[0].insertAdjacentElement("afterend", emptyField);
+        }
+    }
+
+    repeatPasswordField[0].onfocus = function(){
+        repeatPasswordField[0].removeAttribute("placeholder");
+        var repeatPasswordH2 = document.getElementById("repeat-password").getElementsByTagName("h2");
+        if(repeatPasswordH2 != null){
+            repeatPasswordH2[0].remove();
+        }
+    }
+
+    
 }
