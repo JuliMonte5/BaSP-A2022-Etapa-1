@@ -20,14 +20,14 @@ window.onload = function() {
     }
 
     //validate alphanumeric
-    function validateAlphanumeric(inputString, minlength){
+    function validateAlphanumeric(inputSContainertring, minlength){
         var validate;
-        if(inputString.length >= minlength){
-            for(var i = 0; i < inputString.length;i++){
-                if((inputString.charCodeAt(i) >= 97) && (inputString.charCodeAt(i) <= 122)){
+        if(inputSContainertring.length >= minlength){
+            for(var i = 0; i < inputSContainertring.length;i++){
+                if((inputSContainertring.charCodeAt(i) >= 97) && (inputSContainertring.charCodeAt(i) <= 122)){
                     validate = true;
                 }
-                else if((inputString.charCodeAt(i) >= 48) && ((inputString.charCodeAt(i) <= 57))){
+                else if((inputSContainertring.charCodeAt(i) >= 48) && ((inputSContainertring.charCodeAt(i) <= 57))){
                     validate = true;
                 }
                 else {
@@ -440,5 +440,51 @@ window.onload = function() {
         }
     }
 
-    
+    //sign up button
+    var signupButton = document.querySelector("button");
+    signupButton.onclick = function(e){
+        e.preventDefault();
+        var validate = true;
+        var noEmptyFields = true;
+        var stringArrayError = [];
+        var stringArraySuccess = [];
+        var alertStringError, alertStringSuccess;
+        var childrens;
+        var inputsContainer = document.querySelectorAll(".cont-field");
+        var inputs = document.getElementsByTagName("input");
+        var attribiute;
+
+        for(var n = 0; n < inputs.length; n++){
+            if(inputs[n].value == ''){
+                noEmptyFields = false;
+            }
+        }
+
+        for(var i = 0; i < inputsContainer.length; i++){
+            childrens = inputsContainer[i].children;
+            if(childrens[childrens.length - 1].classList.contains("display-flex")){
+                stringArrayError[i] = 'Invalid ' + inputsContainer[i].querySelector("input").getAttribute("name") + ' field';
+                validate = false;
+            }
+        }
+
+        if(!validate){
+            stringArrayError = stringArrayError.filter(String);
+            alertStringError = stringArrayError.join('\n');
+            alert(alertStringError);
+        }
+        else if (noEmptyFields){
+            for(var j = 0; j < inputs.length; j++){
+                attribiute = inputs[j].getAttribute("name");
+                attribiute = attribiute.substring(0,1).toUpperCase() + attribiute.substring(1);
+                stringArraySuccess[j] = attribiute + ': ' + inputs[j].value;
+            }
+            stringArraySuccess = stringArraySuccess.filter(String);
+            alertStringSuccess = stringArraySuccess.join('\n');
+            alert(alertStringSuccess);
+        }
+        else if(!noEmptyFields){
+            alert("Complete all the fields");
+        }
+    }
 }
