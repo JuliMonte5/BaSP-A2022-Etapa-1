@@ -11,14 +11,8 @@ window.onload = function() {
     var emailField = document.getElementsByName("email");
     var passwordField = document.getElementsByName("password");
     var repeatPasswordField = document.getElementsByName("repeat-password");
-
-    var nameValue, lastNameValue, dniValue, birthdayValue, phoneNumberValue, adressValue, locationValue, postcodeValue,
-    emailValue, passwordValue, repeatPasswordValue;
-    //validate length
-    function validateLength(length, fieldValue) {
-        return fieldValue.length >= length;
-    }
-
+    var passwordValue;
+    
     //validate alphanumeric
     function validateAlphanumeric(inputSContainertring, minlength){
         var validate;
@@ -76,7 +70,7 @@ window.onload = function() {
 
     //validate function for name and lastname fields
     var validate = true;
-    function threeLetters(inputValue) {
+    function onlyLetters(inputValue) {
         inputValue = inputValue.toLowerCase();
         if(inputValue.length >= 3){
             for(var i = 0; i < inputValue.length; i++){
@@ -116,10 +110,9 @@ window.onload = function() {
         var validate;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('name');
+        var nameValue = nameField[0].value.trim();
 
-        nameValue = nameField[0].value;
-
-        validate = threeLetters(nameValue, 3);
+        validate = onlyLetters(nameValue, 3);
         if(validate){
             if(nameValue[0].toUpperCase() != nameValue[0]){
                 validate = false;
@@ -136,9 +129,9 @@ window.onload = function() {
 
     nameField[0].onfocus = function(){
         nameField[0].removeAttribute("placeholder");
-        var nameH2 = document.getElementById("name").getElementsByTagName("h2");
-        if(nameH2 != null){
-            nameH2[0].remove();
+        var nameH2 = document.getElementById("name").children;
+        if(nameH2[nameH2.length -1].classList.contains("display-flex")){
+            nameH2[nameH2.length - 1].remove();
         }
     }
 
@@ -147,9 +140,9 @@ window.onload = function() {
         var validate;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('last name');
+        var lastNameValue = lastNameField[0].value.trim();
 
-        lastNameValue = lastNameField[0].value;
-        validate = threeLetters(lastNameValue, 3);
+        validate = onlyLetters(lastNameValue, 3);
         if(validate){
             if(lastNameValue[0].toUpperCase() != lastNameValue[0]){
                 validate = false;
@@ -166,9 +159,9 @@ window.onload = function() {
 
     lastNameField[0].onfocus = function(){
         lastNameField[0].removeAttribute("placeholder");
-        var lastNameH2 = document.getElementById("last-name").getElementsByTagName("h2");
-        if(lastNameH2 != null){
-            lastNameH2[0].remove();
+        var lastNameH2 = document.getElementById("last-name").children;
+        if(lastNameH2[lastNameH2.length -1].classList.contains("display-flex")){
+            lastNameH2[lastNameH2.length - 1].remove();
         }
     }
 
@@ -177,8 +170,8 @@ window.onload = function() {
         var validate;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('dni');
+        var dniValue = dniField[0].value.trim();
 
-        dniValue = dniField[0].value;
         if(dniValue.length >= 7){
             for(var i = 0; i < dniValue.length; i++){
                 if((dniValue.charCodeAt(i) >= 48) && (dniValue.charCodeAt(i) <= 57)){
@@ -204,9 +197,9 @@ window.onload = function() {
 
     dniField[0].onfocus = function(){
         dniField[0].removeAttribute("placeholder");
-        var dniH2 = document.getElementById("dni").getElementsByTagName("h2");
-        if(dniH2 != null){
-            dniH2[0].remove();
+        var dniH2 = document.getElementById("dni").children;
+        if(dniH2[dniH2.length -1].classList.contains("display-flex")){
+            dniH2[dniH2.length - 1].remove();
         }
     }
 
@@ -219,9 +212,9 @@ window.onload = function() {
     }
 
     birthdayField[0].onfocus = function (){
-        var birthdayH2 = document.getElementById("birthday").getElementsByTagName("h2");
-        if(birthdayH2 != null){
-            birthdayH2[0].remove();
+        var birthdayH2 = document.getElementById("birthday").children;
+        if(birthdayH2[birthdayH2.length -1].classList.contains("display-flex")){
+            birthdayH2[birthdayH2.length - 1].remove();
         }
     }
 
@@ -229,9 +222,9 @@ window.onload = function() {
     phoneNumberField[0].onblur = function(){
         var validate;
         var emptyField = createEmptyField();
-        var errorMessage = createErrorMessage('phone number');
+        var errorMessage = createErrorMessage('phone number')
+        var phoneNumberValue = phoneNumberField[0].value.trim();
 
-        phoneNumberValue = phoneNumberField[0].value;
         if(phoneNumberValue.length == 10){
             for(var i = 0; i < phoneNumberValue.length; i++){
                 if((phoneNumberValue.charCodeAt(i) >= 48) && (phoneNumberValue.charCodeAt(i) <= 57)){
@@ -246,6 +239,7 @@ window.onload = function() {
         else {
             validate = false;
         }
+
         if(validate){
             if(phoneNumberValue[0] > 3)
             validate = false;
@@ -261,9 +255,10 @@ window.onload = function() {
 
     phoneNumberField[0].onfocus = function(){
         phoneNumberField[0].removeAttribute("placeholder");
-        var phoneNumberH2 = document.getElementById("phone-number").getElementsByTagName("h2");
-        if(phoneNumberH2 != null){
-            phoneNumberH2[0].remove();
+        var phoneNumberH2 = document.getElementById("phone-number").children;
+
+        if(phoneNumberH2[phoneNumberH2.length -1].classList.contains("display-flex")){
+            phoneNumberH2[phoneNumberH2.length - 1].remove();
         }
     }
 
@@ -271,21 +266,25 @@ window.onload = function() {
     adressField[0].onblur = function(){
         var inputNoSpaces;
         var validate;
+        var onlyOneSpace = true;
         var spaceCounter = 0;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('adress');
-        adressValue = adressField[0].value;
+        var adressValue = adressField[0].value;
         
         for(var i = 0; i < adressValue.length; i++){
             if(adressValue[i] == ' '){
                 spaceCounter++;
+                if((adressValue[i+1] == ' ') && onlyOneSpace){
+                    onlyOneSpace = false;
+                }
             }
         }
 
         inputNoSpaces = adressValue.split(' ').join('');
         validate = (validateAlphanumeric(inputNoSpaces, 5)) && (spaceCounter > 0);
 
-        if(!validate && (adressValue != '')){
+        if((!validate || !onlyOneSpace) && (adressValue != '')){
             adressField[0].insertAdjacentElement("afterend", errorMessage);
         }
         else if(adressValue == ''){
@@ -296,29 +295,41 @@ window.onload = function() {
 
     adressField[0].onfocus = function(){
         adressField[0].removeAttribute("placeholder");
-        var adressH2 = document.getElementById("adress").getElementsByTagName("h2");
-        if(adressH2 != null){
-            adressH2[0].remove();
+        var adressH2 = document.getElementById("adress").children;
+
+        if(adressH2[adressH2.length -1].classList.contains("display-flex")){
+            adressH2[adressH2.length - 1].remove();
         }
     }
 
     //location validation
     locationField[0].onblur = function(){
         var validate;
+        var onlyOneSpace = true;
         var inputNoSpaces;
         var lettersCount = 0;
         var locationValue = locationField[0].value.trim();
         var inputNoSpaces = locationValue.split(' ').join('');
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('location');
+
         for(var i = 0; i < locationValue.length; i++){
             if((locationValue.charCodeAt(i) >= 97) && (locationValue.charCodeAt(i) <= 122)){
                 lettersCount++;
             }
         }
+
+        for(var j = 0; j < locationValue.length; j++){
+            if(locationValue[j] == ' '){
+                if((locationValue[j+1] == ' ') && onlyOneSpace){
+                    onlyOneSpace = false;
+                }
+            }
+        }
+
         validate = (validateAlphanumeric(inputNoSpaces, 3)) && (lettersCount >= 3);
 
-        if(!validate && (locationValue != '')){
+        if((!validate || !onlyOneSpace) && (locationValue != '')){
             locationField[0].insertAdjacentElement("afterend", errorMessage);
         }
         else if(locationValue == ''){
@@ -328,18 +339,19 @@ window.onload = function() {
 
     locationField[0].onfocus = function(){
         locationField[0].removeAttribute("placeholder");
-        var locationH2 = document.getElementById("location").getElementsByTagName("h2");
-        if(locationH2 != null){
-            locationH2[0].remove();
+        var locationH2 = document.getElementById("location").children;
+
+        if(locationH2[locationH2.length -1].classList.contains("display-flex")){
+            locationH2[locationH2.length - 1].remove();
         }
     }
 
     //postcode validation
     postcodeField[0].onblur = function(){
-        postcodeValue = postcodeField[0].value.trim();
         var validate;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('postcode');
+        var postcodeValue = postcodeField[0].value.trim();
 
         if((postcodeValue.length >= 4) && (postcodeValue.length <= 5)){
             for(var i = 0; i < postcodeValue.length; i++){
@@ -366,9 +378,10 @@ window.onload = function() {
 
     postcodeField[0].onfocus = function(){
         postcodeField[0].removeAttribute("placeholder");
-        var postcodeH2 = document.getElementById("postcode").getElementsByTagName("h2");
-        if(postcodeH2 != null){
-            postcodeH2[0].remove();
+        var postcodeH2 = document.getElementById("postcode").children;
+
+        if(postcodeH2[postcodeH2.length -1].classList.contains("display-flex")){
+            postcodeH2[postcodeH2.length - 1].remove();
         }
     }
 
@@ -377,8 +390,8 @@ window.onload = function() {
         var validate;
         var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
         var emptyField = createEmptyField();
-        var errorMessage = createErrorMessage('postcode');
-        emailValue = emailField[0].value.trim();
+        var errorMessage = createErrorMessage('email');
+        var emailValue = emailField[0].value.trim();
 
         if (emailValue.match(emailExpression)){
             validate = true;
@@ -397,19 +410,21 @@ window.onload = function() {
 
     emailField[0].onfocus = function(){
         emailField[0].removeAttribute("placeholder");
-        var emailH2 = document.getElementById("email").getElementsByTagName("h2");
-        if(emailH2 != null){
-            emailH2[0].remove();
+        var emailH2 = document.getElementById("email").children;
+
+        if(emailH2[emailH2.length -1].classList.contains("display-flex")){
+            emailH2[emailH2.length - 1].remove();
         }
     }
 
     //Password validation
     passwordField[0].onblur = function (){
+        var validate;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('password');
+        
         passwordValue = passwordField[0].value;
-
-        var validate = validateAlphanumeric(passwordValue, 8);
+        validate = validateAlphanumeric(passwordValue, 8);
 
         if(!validate && (passwordValue != '')){
             passwordField[0].insertAdjacentElement("afterend", errorMessage);
@@ -421,18 +436,20 @@ window.onload = function() {
 
     passwordField[0].onfocus = function(){
         passwordField[0].removeAttribute("placeholder");
-        var passwordH2 = document.getElementById("password").getElementsByTagName("h2");
-        if(passwordH2 != null){
-            passwordH2[0].remove();
+        var PasswordH2 = document.getElementById("password").children;
+
+        if(PasswordH2[PasswordH2.length -1].classList.contains("display-flex")){
+            PasswordH2[PasswordH2.length - 1].remove();
         }
     }
 
     //repeat password validation
     repeatPasswordField[0].onblur = function(){
-        repeatPasswordValue = repeatPasswordField[0].value;
         var validate;
         var emptyField = createEmptyField();
         var errorMessage = document.createElement("h2");
+        var repeatPasswordValue = repeatPasswordField[0].value;
+
         errorMessage.innerHTML = "The passwords do not match";
         errorMessage.classList.add("display-flex");
 
@@ -453,9 +470,10 @@ window.onload = function() {
 
     repeatPasswordField[0].onfocus = function(){
         repeatPasswordField[0].removeAttribute("placeholder");
-        var repeatPasswordH2 = document.getElementById("repeat-password").getElementsByTagName("h2");
-        if(repeatPasswordH2 != null){
-            repeatPasswordH2[0].remove();
+        var repeatPasswordH2 = document.getElementById("repeat-password").children;
+        
+        if(repeatPasswordH2[repeatPasswordH2.length -1].classList.contains("display-flex")){
+            repeatPasswordH2[repeatPasswordH2.length - 1].remove();
         }
     }
 
@@ -482,7 +500,13 @@ window.onload = function() {
         for(var i = 0; i < inputsContainer.length; i++){
             childrens = inputsContainer[i].children;
             if(childrens[childrens.length - 1].classList.contains("display-flex")){
-                stringArrayError[i] = 'Invalid ' + inputsContainer[i].querySelector("input").getAttribute("name") + ' field';
+                if(childrens[childrens.length - 2].value == ''){
+                    stringArrayError[i] = 'Empty ' + inputsContainer[i].querySelector("input").getAttribute("name") + ' field';
+                }
+                else{
+                    stringArrayError[i] = 'Invalid ' + inputsContainer[i].querySelector("input").getAttribute("name") + ' field';
+                }
+                
                 validate = false;
             }
         }
@@ -496,7 +520,7 @@ window.onload = function() {
             for(var j = 0; j < inputs.length; j++){
                 attribiute = inputs[j].getAttribute("name");
                 attribiute = attribiute.substring(0,1).toUpperCase() + attribiute.substring(1);
-                stringArraySuccess[j] = attribiute + ': ' + inputs[j].value;
+                stringArraySuccess[j] = attribiute + ': ' + inputs[j].value.trim();
             }
             stringArraySuccess = stringArraySuccess.filter(String);
             alertStringSuccess = stringArraySuccess.join('\n');

@@ -11,6 +11,15 @@ h1{
     font-size: 40px;
 }
 
+h2 {
+    display: none;
+    color: #F33413;
+    margin: 0px;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
 #upperbar {
     display: flex;
     align-items: center;

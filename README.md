@@ -27,6 +27,6 @@
 ### Week 06
     Created login and sign up views for the page, along with a responsive design for both of them and the logic to
     validate their field inputs according to the acceptance criteria provided and some criteria of our own.
-    GithubPages link: https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-06/index.html
+    GithubPages link: https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html
 
 _By Julian Montenegro_

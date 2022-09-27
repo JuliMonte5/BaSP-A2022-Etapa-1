@@ -39,17 +39,22 @@ window.onload = function() {
     passwordField[0].onblur = function() {
         passwordInput = passwordField[0].value;
         var passwordInputAux = (passwordField[0].value).toLowerCase();
-        for(var i = 0; i < passwordInputAux.length;i++){
-            if((passwordInputAux.charCodeAt(i) >= 97) && (passwordInputAux.charCodeAt(i) <= 122)){
-                validatePasswordInput = true;
+        if(passwordInput.length >= 8){
+            for(var i = 0; i < passwordInputAux.length;i++){
+                if((passwordInputAux.charCodeAt(i) >= 97) && (passwordInputAux.charCodeAt(i) <= 122)){
+                    validatePasswordInput = true;
+                }
+                else if((passwordInputAux.charCodeAt(i) >= 48) && ((passwordInputAux.charCodeAt(i) <= 57))){
+                    validatePasswordInput = true;
+                }
+                else {
+                    validatePasswordInput = false;
+                    break;
+                }
             }
-            else if((passwordInputAux.charCodeAt(i) >= 48) && ((passwordInputAux.charCodeAt(i) <= 57))){
-                validatePasswordInput = true;
-            }
-            else {
-                validatePasswordInput = false;
-                break;
-            }
+        }
+        else{
+            validatePasswordInput = false;
         }
 
         if(passwordInput == ''){
@@ -68,8 +73,33 @@ window.onload = function() {
         if(validateEmailInput && validatePasswordInput){
             alert('Email: '+emailInput+'\nPassword: '+passwordInput+'');
         }
-        else {
-            alert('Invalid inputs, please check');
+        else if(emailInput == ''){
+            if(validatePasswordInput){
+                alert('Empty email field');
+            }
+            if(!validatePasswordInput  && (passwordInput != '')){
+                alert('Empty email field \nInvalid password')
+            }
+            if(passwordInput == ''){
+                alert('Empty fields')
+            }
+        }
+        else if(passwordInput == ''){
+            if(validateEmailInput){
+                alert('Empty password field');
+            }
+            if(!validateEmailInput){
+                alert('Empty password field \nInvalid email')
+            }
+        }
+        else if(validateEmailInput && !validatePasswordInput){
+            alert("Invalid password input");
+        }
+        else if(!validateEmailInput && validatePasswordInput){
+            alert("Invalid email input");
+        }
+        else{
+            alert("Invalid email and password");
         }
     }
 }

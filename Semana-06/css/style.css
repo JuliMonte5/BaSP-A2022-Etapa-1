@@ -46,7 +46,7 @@ h3 {
 }
 
 .hwa-title, .wcu-title, .func-title, .func-subtitle, .cont-title, .sideb-contact > p, .sidebar-orange, .contact-orange,
-label, input[type=text] {
+label, input[type=text], input[type=password], input[type=date] {
     font-weight:bolder;
     font-family: "Roboto";
 }
