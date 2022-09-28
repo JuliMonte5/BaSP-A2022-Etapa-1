@@ -17,7 +17,7 @@ main {
     flex-direction: column;
 }
 
-p, h1, h2, h3, h4, a, li{
+p, h1, h2, h3, h4, a, li, h5{
     color: #fff;
     font-family: 'Roboto';
 }

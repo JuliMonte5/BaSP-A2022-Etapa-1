@@ -75,17 +75,6 @@ input[type=date] {
     border-color: #373867;
 }
 
-.font-red {
-    display: none;
-    color: #F33413;
-    font-size: 13px;
-    margin-top: 5px;
-}
-
-.display-none {
-    display: none;
-}
-
 .display-flex {
     display: flex;
 }

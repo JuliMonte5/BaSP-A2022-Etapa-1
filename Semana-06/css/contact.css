@@ -1,3 +1,11 @@
+h5 {
+    display: none;
+    color: #F33413;
+    margin: 0px;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
 #contact {
     display: flex;
     flex-direction: column;
@@ -52,7 +60,7 @@ label, select {
 
 textarea {
     height: 180px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     padding: 10px;
     border: 1px solid #373867;
     border-radius: 4px;
@@ -74,6 +82,8 @@ textarea:focus, input[type=text]:focus, input[type=password]:focus, select:focus
 #message > div {
     display: flex;
     justify-content: space-between;
+    order: 1;
+    margin-top: 8px;
 }
 
 #send-button {
@@ -123,6 +133,10 @@ textarea:focus, input[type=text]:focus, input[type=password]:focus, select:focus
 #reset-button:hover {
     border-style: solid;
     border-color: #f33413;
+}
+
+.display-flex {
+    display: flex;
 }
 
 @media only screen and (min-width:480px) {

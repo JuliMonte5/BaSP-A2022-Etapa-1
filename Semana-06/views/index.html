@@ -22,6 +22,7 @@
         <script src="https://kit.fontawesome.com/d7c9d962f7.js" crossorigin="anonymous"></script>
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <script src="../javascript/contact.js"></script>
     </head>
     <body>
         <aside>
@@ -240,7 +241,7 @@
                         <div id="inputs">
                             <div class="cont-field" id="input-name">
                                 <label>Name</label>
-                                <input type="text" placeholder="Your Name Here">
+                                <input class="input" name="name" type="text" placeholder="Your Name Here">
                             </div>
                             <div class="cont-field" id="contact-area">
                                 <label>Contact Area</label>
@@ -250,19 +251,19 @@
                                     <option value="communication">Communication</option>
                                 </select>
                             </div>
-                            <div class="cont-field">
+                            <div class="cont-field" id="input-email">
                                 <label>Email</label>
-                                <input type="text" placeholder="Your Email Here">
+                                <input class="input" name="email" type="text" placeholder="Your Email Here">
                             </div>
                         </div>
                         <div id="message">
                             <label>Message</label>
-                            <textarea name="message" cols="30" rows="10" placeholder="Your Message Here">
-                            </textarea>
                             <div>
                                 <button id="send-button"><i class="fa-solid fa-envelope"></i>Send Message</button>
                                 <button id="reset-button"><i class="fa-solid fa-xmark"></i></i>Reset</button>
                             </div>
+                            <textarea class="input" name="message" cols="30" rows="10" placeholder="Your Message Here">
+                            </textarea>
                         </div>
                     </form>
                 </section>
