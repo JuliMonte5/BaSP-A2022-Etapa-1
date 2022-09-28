@@ -43,6 +43,7 @@ form {
 
 #contact-area {
     justify-content: flex-end;
+    order: 1;
 }
 
 input[type=text], input[type=password], select, input[type=date] {
@@ -142,9 +143,6 @@ textarea:focus, input[type=text]:focus, input[type=password]:focus, select:focus
 @media only screen and (min-width:480px) {
     #inputs {
         justify-content: space-between;
-    }
-    #inputs div:nth-child(2){
-        order: 1;
     }
     #inputs div {
         width: 49%

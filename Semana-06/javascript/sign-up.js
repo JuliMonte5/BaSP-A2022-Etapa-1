@@ -12,6 +12,18 @@ window.onload = function() {
     var passwordField = document.getElementsByName("password");
     var repeatPasswordField = document.getElementsByName("repeat-password");
     var passwordValue;
+
+    //Reset fields function
+    function resetField(field, placeholder, id){
+        field.value = '';
+        field.setAttribute("placeholder", "Your "+placeholder+" here");
+        field.setAttribute("style", "border: 1px solid #373867")
+        var errorMessage = document.getElementById(id).children;
+
+        if(errorMessage[errorMessage.length -1].classList.contains("display-flex")){
+            errorMessage[errorMessage.length - 1].remove();
+        }
+    }
     
     //validate alphanumeric
     function validateAlphanumeric(inputSContainertring, minlength){
@@ -32,38 +44,6 @@ window.onload = function() {
         }
         else{
             validate = false;
-        }
-        return validate;
-    }
-
-    //validate alphabetic
-    function validateAlphabet(fieldValue){
-        var validate;
-        fieldValue = fieldValue.toLowerCase();
-        for(var i = 0; i < fieldValue.length; i++){
-            if((fieldValue.charCodeAt(i) >= 97) && (fieldValue.charCodeAt(i) <= 122)){
-                validate = true;
-            }
-            else {
-                validate = false;
-                break;
-            }
-        }
-        return validate;
-    }
-
-    //validate numeric
-    function validateDecimal(fieldValue){
-        var validate;
-        fieldValue = fieldValue.toLowerCase();
-        for(var i = 0; i < fieldValue.length; i++){
-            if((fieldValue.charCodeAt(i) >= 97) && (fieldValue.charCodeAt(i) <= 122)){
-                validate = true;
-            }
-            else {
-                validate = false;
-                break;
-            }
         }
         return validate;
     }
@@ -121,9 +101,14 @@ window.onload = function() {
 
         if((!validate) && (nameValue != '')){
             nameField[0].insertAdjacentElement("afterend", errorMessage);
+            nameField[0].setAttribute("style", "border: 2px solid red");
         }
         else if(nameValue == ''){
             nameField[0].insertAdjacentElement("afterend", emptyField);
+            nameField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else if(validate){
+            nameField[0].setAttribute("style", "border: 2px solid green");
         }
     }
 
@@ -151,9 +136,14 @@ window.onload = function() {
 
         if((!validate) && (lastNameValue != '')){
             lastNameField[0].insertAdjacentElement("afterend", errorMessage);
+            lastNameField[0].setAttribute("style", "border: 2px solid red");
         }
         else if(lastNameValue == ''){
             lastNameField[0].insertAdjacentElement("afterend", emptyField);
+            lastNameField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else if(validate){
+            lastNameField[0].setAttribute("style", "border: 2px solid green");
         }
     }
 
@@ -189,9 +179,14 @@ window.onload = function() {
 
         if(!validate && (dniValue != '')){
             dniField[0].insertAdjacentElement("afterend", errorMessage);
+            dniField[0].setAttribute("style", "border: 2px solid red");
         }
         else if(dniValue == ''){
             dniField[0].insertAdjacentElement("afterend", emptyField);
+            dniField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else if(validate){
+            dniField[0].setAttribute("style", "border: 2px solid green");
         }
     }
 
@@ -208,6 +203,10 @@ window.onload = function() {
         var emptyField = createEmptyField();
         if((birthdayField[0].value) == ''){
             birthdayField[0].insertAdjacentElement("afterend", emptyField);
+            birthdayField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else{
+            birthdayField[0].setAttribute("style", "border: 2px solid green");
         }
     }
 
@@ -247,9 +246,14 @@ window.onload = function() {
 
         if(!validate && (phoneNumberValue != '')){
             phoneNumberField[0].insertAdjacentElement("afterend", errorMessage);
+            phoneNumberField[0].setAttribute("style", "border: 2px solid red");
         }
         else if(phoneNumberValue == ''){
             phoneNumberField[0].insertAdjacentElement("afterend", emptyField);
+            phoneNumberField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else if(validate){
+            phoneNumberField[0].setAttribute("style", "border: 2px solid green");
         }
     }
 
@@ -286,9 +290,14 @@ window.onload = function() {
 
         if((!validate || !onlyOneSpace) && (adressValue != '')){
             adressField[0].insertAdjacentElement("afterend", errorMessage);
+            adressField[0].setAttribute("style", "border: 2px solid red");
         }
         else if(adressValue == ''){
             adressField[0].insertAdjacentElement("afterend", emptyField);
+            adressField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else if(validate){
+            adressField[0].setAttribute("style", "border: 2px solid green");
         }
 
     }
@@ -331,9 +340,14 @@ window.onload = function() {
 
         if((!validate || !onlyOneSpace) && (locationValue != '')){
             locationField[0].insertAdjacentElement("afterend", errorMessage);
+            locationField[0].setAttribute("style", "border: 2px solid red");
         }
         else if(locationValue == ''){
             locationField[0].insertAdjacentElement("afterend", emptyField);
+            locationField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else if(validate){
+            locationField[0].setAttribute("style", "border: 2px solid green");
         }
     }
 
@@ -370,9 +384,14 @@ window.onload = function() {
 
         if(!validate && (postcodeValue != '')){
             postcodeField[0].insertAdjacentElement("afterend", errorMessage);
+            postcodeField[0].setAttribute("style", "border: 2px solid red");
         }
         else if(postcodeValue == ''){
             postcodeField[0].insertAdjacentElement("afterend", emptyField);
+            postcodeField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else if(validate){
+            postcodeField[0].setAttribute("style", "border: 2px solid green");
         }
     }
 
@@ -402,9 +421,14 @@ window.onload = function() {
 
         if(!validate && (emailValue != '')){
             emailField[0].insertAdjacentElement("afterend", errorMessage);
+            emailField[0].setAttribute("style", "border: 2px solid red");
         }
         else if(emailValue == ''){
             emailField[0].insertAdjacentElement("afterend", emptyField);
+            emailField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else if(validate){
+            emailField[0].setAttribute("style", "border: 2px solid green");
         }
     }
 
@@ -428,9 +452,14 @@ window.onload = function() {
 
         if(!validate && (passwordValue != '')){
             passwordField[0].insertAdjacentElement("afterend", errorMessage);
+            passwordField[0].setAttribute("style", "border: 2px solid red");
         }
         else if(passwordValue == ''){
             passwordField[0].insertAdjacentElement("afterend", emptyField);
+            passwordField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else if(validate){
+            passwordField[0].setAttribute("style", "border: 2px solid green");
         }
     }
 
@@ -462,9 +491,14 @@ window.onload = function() {
 
         if(!validate && (repeatPasswordValue != '')){
             repeatPasswordField[0].insertAdjacentElement("afterend", errorMessage);
+            repeatPasswordField[0].setAttribute("style", "border: 2px solid red");
         }
         else if(repeatPasswordValue == ''){
             repeatPasswordField[0].insertAdjacentElement("afterend", emptyField);
+            repeatPasswordField[0].setAttribute("style", "border: 2px solid red");
+        }
+        else if(validate){
+            repeatPasswordField[0].setAttribute("style", "border: 2px solid green");
         }
     }
 
@@ -501,10 +535,14 @@ window.onload = function() {
             childrens = inputsContainer[i].children;
             if(childrens[childrens.length - 1].classList.contains("display-flex")){
                 if(childrens[childrens.length - 2].value == ''){
-                    stringArrayError[i] = 'Empty ' + inputsContainer[i].querySelector("input").getAttribute("name") + ' field';
+                    stringArrayError[i] = 'Empty '
+                    + inputsContainer[i].querySelector("input").getAttribute("name").split('-').join(' ')
+                    + ' field';
                 }
                 else{
-                    stringArrayError[i] = 'Invalid ' + inputsContainer[i].querySelector("input").getAttribute("name") + ' field';
+                    stringArrayError[i] = 'Invalid '
+                    + inputsContainer[i].querySelector("input").getAttribute("name").split('-').join(' ')
+                    + ' field';
                 }
                 
                 validate = false;
@@ -528,6 +566,18 @@ window.onload = function() {
         }
         else if(!noEmptyFields){
             alert("Complete all the fields");
+        }
+    }
+
+    //reset button logic
+    var resetButton = document.getElementById("reset-button");
+    resetButton.onclick = function(e){
+        var placeholder;
+        e.preventDefault();
+        var inputs = document.getElementsByTagName("input");
+        for(var i = 0; i < inputs.length; i++){
+            placeholder = inputs[i].getAttribute("name");
+            resetField(inputs[i], placeholder.split('-').join(' '), placeholder);
         }
     }
 }

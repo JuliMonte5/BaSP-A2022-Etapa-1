@@ -19,6 +19,10 @@ h2 {
     margin-top: 5px;
 }
 
+form {
+    align-items: flex-start;
+}
+
 #upperbar {
     display: flex;
     align-items: center;
@@ -39,6 +43,14 @@ h2 {
 
 input[type=date] {
     color: gray;
+}
+
+#name {
+    order: -2;
+}
+
+#last-name{
+    order: -1;
 }
 
 #buttons {

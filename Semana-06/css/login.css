@@ -86,3 +86,7 @@ h2 {
 .display-flex {
     display: flex;
 }
+
+.green-border{
+    border: 2px solid green";
+}

@@ -214,10 +214,14 @@ window.onload = function() {
             childrens = inputsContainer[i].children;
             if(childrens[childrens.length - 1].classList.contains("display-flex")){
                 if(childrens[childrens.length - 2].value == ''){
-                    stringArrayError[i] = 'Empty ' + inputsContainer[i].querySelector("input").getAttribute("name") + ' field';
+                    stringArrayError[i] = 'Empty '
+                    + inputsContainer[i].querySelector("input").getAttribute("name").split('-').join(' ')
+                    + ' field';
                 }
                 else{
-                    stringArrayError[i] = 'Invalid ' + inputsContainer[i].querySelector("input").getAttribute("name") + ' field';
+                    stringArrayError[i] = 'Invalid '
+                    + inputsContainer[i].querySelector("input").getAttribute("name").split('-').join(' ')
+                    + ' field';
                 }
                 
                 validate = false;

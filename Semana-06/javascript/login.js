@@ -23,10 +23,16 @@ window.onload = function() {
 
         if(emailInput == ''){
             pErrors[1].classList.add("display-flex");
+            emailField[0].setAttribute("style", "border: 2px solid red")
         }
 
         if(!validateEmailInput && emailInput != ''){
             pErrors[0].classList.add("display-flex");
+            emailField[0].setAttribute("style", "border: 2px solid red")
+        }
+
+        if(validateEmailInput){
+            emailField[0].setAttribute("style", "border: 2px solid green")
         }
     }
 
@@ -35,6 +41,7 @@ window.onload = function() {
         passwordField[0].removeAttribute("placeholder");
         pErrors[2].classList.remove("display-flex");
         pErrors[3].classList.remove("display-flex");
+        passwordField[0].setAttribute("style", "border: 1px solid red")
     }
     passwordField[0].onblur = function() {
         passwordInput = passwordField[0].value;
@@ -59,10 +66,16 @@ window.onload = function() {
 
         if(passwordInput == ''){
             pErrors[3].classList.add("display-flex");
+            passwordField[0].setAttribute("style", "border: 2px solid red")
         }
 
         if(!validatePasswordInput && passwordInput != ''){
             pErrors[2].classList.add("display-flex");
+            passwordField[0].setAttribute("style", "border: 2px solid red")
+        }
+
+        if(validatePasswordInput){
+            passwordField[0].setAttribute("style", "border: 2px solid green")
         }
     }
 
