@@ -1,0 +1,75 @@
+#functionalities {
+    display: flex;
+    flex-direction: column;
+    flex-basis: content;
+}
+
+.func-title {
+    align-self: center;
+}
+
+#func-elements {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-basis: content;
+    height: 453px;
+    margin-top: 40px;
+}
+
+.func-elem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.func-elem > img {
+    order: -1;
+}
+
+.func-elem > img:hover {
+    transform: scale(1.15, 1.15);
+}
+
+.func-text {
+    flex-grow: 1;
+    width: 70%;
+    text-align: center;
+}
+
+.func-text h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.func-text p {
+    order: 1;
+    width: 100%;
+    height: auto;
+    margin-top: 13px;
+    color: #000;
+    font-size: 20px;
+}
+
+@media only screen and (min-width:480px) {
+    .func-elem {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .func-elem {
+        flex-direction: row;
+        flex-basis: 45%;
+        margin-bottom: 110px;
+        margin-right: 5px;
+    }
+    .func-text {
+        width: 70%;
+    }
+    .func-elem img {
+        width: 30%;
+        height: auto;
+    }
+}
