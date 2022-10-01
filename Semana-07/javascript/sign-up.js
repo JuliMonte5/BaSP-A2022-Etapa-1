@@ -3,11 +3,11 @@ window.onload = function() {
     var nameField = document.getElementsByName("name");
     var lastNameField = document.getElementsByName("last-name");
     var dniField = document.getElementsByName("dni");
-    var birthdayField = document.getElementsByName("birthday");
-    var phoneNumberField = document.getElementsByName("phone-number");
-    var adressField = document.getElementsByName("adress");
-    var locationField = document.getElementsByName("location");
-    var postcodeField = document.getElementsByName("postcode");
+    var birthdayField = document.getElementsByName("dob");
+    var phoneNumberField = document.getElementsByName("phone");
+    var adressField = document.getElementsByName("address");
+    var locationField = document.getElementsByName("city");
+    var postcodeField = document.getElementsByName("zip");
     var emailField = document.getElementsByName("email");
     var passwordField = document.getElementsByName("password");
     var repeatPasswordField = document.getElementsByName("repeat-password");
@@ -24,11 +24,11 @@ window.onload = function() {
             errorMessage[errorMessage.length - 1].remove();
         }
     }
-    
+
     //validate alphanumeric
     function validateAlphanumeric(inputSContainertring, minlength){
         var validate;
-        if(inputSContainertring.length >= minlength){
+        if(inputSContainertring.length > minlength){
             for(var i = 0; i < inputSContainertring.length;i++){
                 if((inputSContainertring.charCodeAt(i) >= 97) && (inputSContainertring.charCodeAt(i) <= 122)){
                     validate = true;
@@ -52,7 +52,7 @@ window.onload = function() {
     var validate = true;
     function onlyLetters(inputValue) {
         inputValue = inputValue.toLowerCase();
-        if(inputValue.length >= 3){
+        if(inputValue.length > 3){
             for(var i = 0; i < inputValue.length; i++){
                 if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)){
                     validate = true;
@@ -275,7 +275,7 @@ window.onload = function() {
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('adress');
         var adressValue = adressField[0].value;
-        
+
         for(var i = 0; i < adressValue.length; i++){
             if(adressValue[i] == ' '){
                 spaceCounter++;
@@ -446,7 +446,7 @@ window.onload = function() {
         var validate;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('password');
-        
+
         passwordValue = passwordField[0].value;
         validate = validateAlphanumeric(passwordValue, 8);
 
@@ -505,7 +505,7 @@ window.onload = function() {
     repeatPasswordField[0].onfocus = function(){
         repeatPasswordField[0].removeAttribute("placeholder");
         var repeatPasswordH2 = document.getElementById("repeat-password").children;
-        
+
         if(repeatPasswordH2[repeatPasswordH2.length -1].classList.contains("display-flex")){
             repeatPasswordH2[repeatPasswordH2.length - 1].remove();
         }
@@ -520,10 +520,11 @@ window.onload = function() {
         var stringArrayError = [];
         var stringArraySuccess = [];
         var alertStringError, alertStringSuccess;
-        var childrens;
+        var children;
         var inputsContainer = document.querySelectorAll(".cont-field");
         var inputs = document.getElementsByTagName("input");
-        var attribiute;
+        var attribute;
+        var queryParams;
 
         for(var n = 0; n < inputs.length; n++){
             if(inputs[n].value == ''){
@@ -532,9 +533,9 @@ window.onload = function() {
         }
 
         for(var i = 0; i < inputsContainer.length; i++){
-            childrens = inputsContainer[i].children;
-            if(childrens[childrens.length - 1].classList.contains("display-flex")){
-                if(childrens[childrens.length - 2].value == ''){
+            children = inputsContainer[i].children;
+            if(children[children.length - 1].classList.contains("display-flex")){
+                if(children[children.length - 2].value == ''){
                     stringArrayError[i] = 'Empty '
                     + inputsContainer[i].querySelector("input").getAttribute("name").split('-').join(' ')
                     + ' field';
@@ -544,7 +545,7 @@ window.onload = function() {
                     + inputsContainer[i].querySelector("input").getAttribute("name").split('-').join(' ')
                     + ' field';
                 }
-                
+
                 validate = false;
             }
         }
@@ -555,14 +556,35 @@ window.onload = function() {
             alert(alertStringError);
         }
         else if (noEmptyFields){
-            for(var j = 0; j < inputs.length; j++){
-                attribiute = inputs[j].getAttribute("name");
-                attribiute = attribiute.substring(0,1).toUpperCase() + attribiute.substring(1);
-                stringArraySuccess[j] = attribiute + ': ' + inputs[j].value.trim();
+            for(var j = 0; j < inputs.length - 1; j++){
+                attribute = inputs[j].getAttribute("name");
+                if(attribute == 'last-name'){
+                    stringArraySuccess[j] = "lastName="+inputs[j].value.trim();
+                }
+                else if (attribute == 'dob'){
+                    var birthdayValue = (inputs[j].value).split('-');
+                    var year = birthdayValue.shift();
+                    birthdayValue.push(year);
+                    birthdayValue = birthdayValue.join("/");
+                    stringArraySuccess[j] = "dob="+birthdayValue;
+                }
+                else {
+                    stringArraySuccess[j] = attribute + '=' + inputs[j].value.trim();
+                }
             }
-            stringArraySuccess = stringArraySuccess.filter(String);
-            alertStringSuccess = stringArraySuccess.join('\n');
-            alert(alertStringSuccess);
+            queryParams = stringArraySuccess.filter(String);
+            queryParams = stringArraySuccess.join('&');
+            fetch("https://basp-m2022-api-rest-server.herokuapp.com/signup?"+queryParams)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                alert(data.data);
+            })
+            .catch(function(error){
+                alert(error);
+            })
+
         }
         else if(!noEmptyFields){
             alert("Complete all the fields");
