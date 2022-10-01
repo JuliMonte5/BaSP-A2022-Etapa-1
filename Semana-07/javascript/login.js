@@ -83,21 +83,18 @@ window.onload = function() {
     var loginButton = document.querySelector("button");
     loginButton.onclick = function(e){
         e.preventDefault();
-        //fetch
-        fetch("https://basp-m2022-api-rest-server.herokuapp.com/login?email=rose@radiumrocket.com&password=BaSP2022")
+
+        if(validateEmailInput && validatePasswordInput){
+            fetch("https://basp-m2022-api-rest-server.herokuapp.com/login?email="+emailInput+"&password="+passwordInput)
             .then(function(response){
                 return response.json();
             })
             .then(function(data){
-                console.log(data);
+                alert(data.msg);
             })
             .catch(function(error){
-                console.log(error);
+                alert(error.msg);
             })
-
-        //
-        if(validateEmailInput && validatePasswordInput){
-            alert('Email: '+emailInput+'\nPassword: '+passwordInput+'');
         }
         else if(emailInput == ''){
             if(validatePasswordInput){
