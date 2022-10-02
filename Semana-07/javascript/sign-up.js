@@ -13,6 +13,63 @@ window.onload = function() {
     var repeatPasswordField = document.getElementsByName("repeat-password");
     var passwordValue;
 
+    //query params function
+    function createQueryArray(){
+        var attribute;
+        var inputs = document.getElementsByTagName("input");
+        var stringArraySuccess = [];
+        for(var j = 0; j < inputs.length - 1; j++){
+            attribute = inputs[j].getAttribute("name");
+            if(attribute == 'last-name'){
+                stringArraySuccess[j] = "lastName="+inputs[j].value.trim();
+            }
+            else if (attribute == 'dob'){
+                var birthdayValue = (inputs[j].value).split('-');
+                var year = birthdayValue.shift();
+                birthdayValue.push(year);
+                birthdayValue = birthdayValue.join("/");
+                stringArraySuccess[j] = "dob="+birthdayValue;
+            }
+            else {
+                stringArraySuccess[j] = attribute + '=' + inputs[j].value.trim();
+            }
+        }
+        return stringArraySuccess;
+    }
+
+    //Local Storage data charge
+    function defaultValues(){
+        var inputs = document.getElementsByTagName("input");
+        var attribute;
+        for (var i = 0; i < inputs.length; i++){
+            attribute = inputs[i].getAttribute('name');
+            if(attribute == 'dob'){
+                var date = localStorage.getItem(attribute);
+                if(date != null){
+                    date = date.split('/');
+                    var year = date.pop();
+                    date.unshift(year);
+                    date = date.join('-');
+                    inputs[i].value = date;
+                }
+            }
+            else if(attribute == 'last-name'){
+                var item = localStorage.getItem('lastName');
+                if(item != null) {
+                    inputs[i].value = item;
+                }
+            }
+            else {
+                var item = localStorage.getItem(attribute)
+                if(item != null){
+                    inputs[i].value = item;
+                }
+            }
+        }
+    }
+
+    defaultValues();
+
     //Reset fields function
     function resetField(field, placeholder, id){
         field.value = '';
@@ -479,6 +536,7 @@ window.onload = function() {
         var errorMessage = document.createElement("h2");
         var repeatPasswordValue = repeatPasswordField[0].value;
 
+        passwordValue = passwordField[0].value;
         errorMessage.innerHTML = "The passwords do not match";
         errorMessage.classList.add("display-flex");
 
@@ -519,11 +577,9 @@ window.onload = function() {
         var noEmptyFields = true;
         var stringArrayError = [];
         var stringArraySuccess = [];
-        var alertStringError, alertStringSuccess;
         var children;
         var inputsContainer = document.querySelectorAll(".cont-field");
         var inputs = document.getElementsByTagName("input");
-        var attribute;
         var queryParams;
 
         for(var n = 0; n < inputs.length; n++){
@@ -556,22 +612,7 @@ window.onload = function() {
             alert(alertStringError);
         }
         else if (noEmptyFields){
-            for(var j = 0; j < inputs.length - 1; j++){
-                attribute = inputs[j].getAttribute("name");
-                if(attribute == 'last-name'){
-                    stringArraySuccess[j] = "lastName="+inputs[j].value.trim();
-                }
-                else if (attribute == 'dob'){
-                    var birthdayValue = (inputs[j].value).split('-');
-                    var year = birthdayValue.shift();
-                    birthdayValue.push(year);
-                    birthdayValue = birthdayValue.join("/");
-                    stringArraySuccess[j] = "dob="+birthdayValue;
-                }
-                else {
-                    stringArraySuccess[j] = attribute + '=' + inputs[j].value.trim();
-                }
-            }
+            stringArraySuccess = createQueryArray();
             queryParams = stringArraySuccess.filter(String);
             queryParams = stringArraySuccess.join('&');
             fetch("https://basp-m2022-api-rest-server.herokuapp.com/signup?"+queryParams)
@@ -579,7 +620,17 @@ window.onload = function() {
                 return response.json();
             })
             .then(function(data){
-                alert(data.data);
+                var alertStringSuccess;
+                var alertArraySuccess = [];
+                var queryParamsArray = queryParams.split('&');
+                for(var h = 0; h < queryParamsArray.length; h++){
+                    var queryParam = queryParamsArray[h];
+                    queryParam = queryParam.substring(0, queryParam.indexOf('='));
+                    localStorage.setItem(queryParam, data.data[queryParam]);
+                    alertArraySuccess[h] = queryParam +': '+ data.data[queryParam];
+                }
+                alertStringSuccess = alertArraySuccess.join('\n');
+                alert('Request completed succesfully\nResponse:\n'+alertStringSuccess);
             })
             .catch(function(error){
                 alert(error);
