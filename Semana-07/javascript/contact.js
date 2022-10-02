@@ -5,12 +5,12 @@ window.onload = function() {
     var resetButton = document.getElementById("reset-button");
 
     //Reset fields function
-    function resetField(field, placeholder, id){
+    function resetField(field, placeholder, id) {
         field.value = '';
         field.setAttribute("placeholder", "Your "+placeholder+" here");
         var errorMessage = document.getElementById(id).children;
 
-        if(errorMessage[errorMessage.length -1].classList.contains("display-flex")){
+        if (errorMessage[errorMessage.length -1].classList.contains("display-flex")) {
             errorMessage[errorMessage.length - 1].remove();
         }
     }
@@ -19,9 +19,9 @@ window.onload = function() {
     var validate = true;
     function onlyLetters(inputValue) {
         inputValue = inputValue.toLowerCase();
-        if(inputValue.length >= 3){
-            for(var i = 0; i < inputValue.length; i++){
-                if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)){
+        if (inputValue.length >= 3) {
+            for (var i = 0; i < inputValue.length; i++) {
+                if ((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)) {
                     validate = true;
                 }
                 else {
@@ -37,14 +37,15 @@ window.onload = function() {
     }
 
     //validate alphanumeric
-    function validateAlphanumeric(inputSContainertring, minlength){
+    function validateAlphanumeric(inputSContainertring, minlength) {
         var validate;
-        if(inputSContainertring.length >= minlength){
-            for(var i = 0; i < inputSContainertring.length;i++){
-                if((inputSContainertring.charCodeAt(i) >= 97) && (inputSContainertring.charCodeAt(i) <= 122)){
+        inputSContainertring = inputSContainertring.toLowerCase();
+        if (inputSContainertring.length >= minlength) {
+            for (var i = 0; i < inputSContainertring.length;i++) {
+                if ((inputSContainertring.charCodeAt(i) >= 97) && (inputSContainertring.charCodeAt(i) <= 122)) {
                     validate = true;
                 }
-                else if((inputSContainertring.charCodeAt(i) >= 48) && ((inputSContainertring.charCodeAt(i) <= 57))){
+                else if ((inputSContainertring.charCodeAt(i) >= 48) && ((inputSContainertring.charCodeAt(i) <= 57))) {
                     validate = true;
                 }
                 else {
@@ -53,14 +54,14 @@ window.onload = function() {
                 }
             }
         }
-        else{
+        else {
             validate = false;
         }
         return validate;
     }
 
     //function to create empty field message
-    function createEmptyField(){
+    function createEmptyField() {
         var emptyField = document.createElement("h5");
         emptyField.innerHTML = "This field is required";
         emptyField.classList.add("display-flex");
@@ -68,7 +69,7 @@ window.onload = function() {
     }
 
     //function to create error message
-    function createErrorMessage(fieldName){
+    function createErrorMessage(fieldName) {
         var errorMessage = document.createElement("h5");
         errorMessage.innerHTML = "Invalid " + fieldName + " format";
         errorMessage.classList.add("display-flex");
@@ -76,33 +77,33 @@ window.onload = function() {
     }
 
     //name field validation
-    nameField[0].onblur = function(){
+    nameField[0].onblur = function() {
         var validate;
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('name');
         var nameValue = nameField[0].value.trim();
 
         validate = onlyLetters(nameValue, 3);
-        if(validate){
-            if(nameValue[0].toUpperCase() != nameValue[0]){
+        if (validate) {
+            if (nameValue[0].toUpperCase() != nameValue[0]) {
                 validate = false;
             }
         }
 
-        if((!validate) && (nameValue != '')){
+        if ((!validate) && (nameValue != '')) {
             nameField[0].insertAdjacentElement("afterend", errorMessage);
         }
-        else if(nameValue == ''){
+        else if (nameValue == '') {
             nameField[0].insertAdjacentElement("afterend", emptyField);
         }
     }
 
-    nameField[0].onfocus = function(){
+    nameField[0].onfocus = function() {
         nameField[0].removeAttribute("placeholder");
-        var nameh5 = document.getElementById("input-name").children;
+        var nameNoticeHeader = document.getElementById("input-name").children;
 
-        if(nameh5[nameh5.length -1].classList.contains("display-flex")){
-            nameh5[nameh5.length - 1].remove();
+        if (nameNoticeHeader[nameNoticeHeader.length -1].classList.contains("display-flex")) {
+            nameNoticeHeader[nameNoticeHeader.length - 1].remove();
         }
     }
 
@@ -114,32 +115,32 @@ window.onload = function() {
         var errorMessage = createErrorMessage('email');
         var emailValue = emailField[0].value.trim();
 
-        if (emailValue.match(emailExpression)){
+        if (emailValue.match(emailExpression)) {
             validate = true;
         }
         else {
             validate = false;
         }
 
-        if(!validate && (emailValue != '')){
+        if (!validate && (emailValue != '')) {
             emailField[0].insertAdjacentElement("afterend", errorMessage);
         }
-        else if(emailValue == ''){
+        else if (emailValue == '') {
             emailField[0].insertAdjacentElement("afterend", emptyField);
         }
     }
 
-    emailField[0].onfocus = function(){
+    emailField[0].onfocus = function() {
         emailField[0].removeAttribute("placeholder");
-        var emailH2 = document.getElementById("input-email").children;
+        var emailNoticeHeader = document.getElementById("input-email").children;
 
-        if(emailH2[emailH2.length -1].classList.contains("display-flex")){
-            emailH2[emailH2.length - 1].remove();
+        if (emailNoticeHeader[emailNoticeHeader.length -1].classList.contains("display-flex")) {
+            emailNoticeHeader[emailNoticeHeader.length - 1].remove();
         }
     }
 
     //message validation
-    messageField[0].onblur = function(){
+    messageField[0].onblur = function() {
         var validate;
         var onlyOneSpace = true;
         var inputNoSpaces;
@@ -149,15 +150,15 @@ window.onload = function() {
         var emptyField = createEmptyField();
         var errorMessage = createErrorMessage('message');
 
-        for(var i = 0; i < messageValue.length; i++){
-            if((messageValue.charCodeAt(i) >= 97) && (messageValue.charCodeAt(i) <= 122)){
+        for (var i = 0; i < messageValue.length; i++) {
+            if ((messageValue.charCodeAt(i) >= 97) && (messageValue.charCodeAt(i) <= 122)) {
                 lettersCount++;
             }
         }
 
-        for(var j = 0; j < messageValue.length; j++){
-            if(messageValue[j] == ' '){
-                if((messageValue[j+1] == ' ') && onlyOneSpace){
+        for (var j = 0; j < messageValue.length; j++) {
+            if (messageValue[j] == ' ') {
+                if ((messageValue[j+1] == ' ') && onlyOneSpace) {
                     onlyOneSpace = false;
                 }
             }
@@ -165,25 +166,25 @@ window.onload = function() {
 
         validate = (validateAlphanumeric(inputNoSpaces, 3)) && (lettersCount >= 3);
 
-        if((!validate || !onlyOneSpace) && (messageValue != '')){
+        if ((!validate || !onlyOneSpace) && (messageValue != '')) {
             messageField[0].insertAdjacentElement("afterend", errorMessage);
         }
-        else if(messageValue == ''){
+        else if (messageValue == '') {
             messageField[0].insertAdjacentElement("afterend", emptyField);
         }
     }
 
-    messageField[0].onfocus = function(){
+    messageField[0].onfocus = function() {
         messageField[0].removeAttribute("placeholder");
-        var messageh5 = document.getElementById("message").children;
+        var messageNoticeHeader = document.getElementById("message").children;
 
-        if(messageh5[messageh5.length -1].classList.contains("display-flex")){
-            messageh5[messageh5.length - 1].remove();
+        if (messageNoticeHeader[messageNoticeHeader.length -1].classList.contains("display-flex")) {
+            messageNoticeHeader[messageNoticeHeader.length - 1].remove();
         }
     }
 
     //reset button logic
-    resetButton.onclick = function(e){
+    resetButton.onclick = function(e) {
         e.preventDefault();
         resetField(nameField[0], "name", "input-name");
         resetField(emailField[0], "name", "input-email");
@@ -192,7 +193,7 @@ window.onload = function() {
 
     //send message logic
     var sendButton = document.getElementById("send-button");
-    sendButton.onclick = function(e){
+    sendButton.onclick = function(e) {
         e.preventDefault();
         var validate = true;
         var noEmptyFields = true;
@@ -204,37 +205,37 @@ window.onload = function() {
         var inputs = document.getElementsByClassName("input");
         var attribiute;
 
-        for(var n = 0; n < inputs.length; n++){
-            if(inputs[n].value == ''){
+        for (var n = 0; n < inputs.length; n++) {
+            if (inputs[n].value == '') {
                 noEmptyFields = false;
             }
         }
 
-        for(var i = 0; i < inputsContainer.length; i++){
+        for (var i = 0; i < inputsContainer.length; i++) {
             childrens = inputsContainer[i].children;
-            if(childrens[childrens.length - 1].classList.contains("display-flex")){
-                if(childrens[childrens.length - 2].value == ''){
+            if (childrens[childrens.length - 1].classList.contains("display-flex")) {
+                if (childrens[childrens.length - 2].value == '') {
                     stringArrayError[i] = 'Empty '
                     + inputsContainer[i].querySelector("input").getAttribute("name").split('-').join(' ')
                     + ' field';
                 }
-                else{
+                else {
                     stringArrayError[i] = 'Invalid '
                     + inputsContainer[i].querySelector("input").getAttribute("name").split('-').join(' ')
                     + ' field';
                 }
-                
+
                 validate = false;
             }
         }
 
-        if(!validate){
+        if (!validate) {
             stringArrayError = stringArrayError.filter(String);
             alertStringError = stringArrayError.join('\n');
             alert(alertStringError);
         }
-        else if (noEmptyFields){
-            for(var j = 0; j < inputs.length; j++){
+        else if (noEmptyFields) {
+            for (var j = 0; j < inputs.length; j++) {
                 attribiute = inputs[j].getAttribute("name");
                 attribiute = attribiute.substring(0,1).toUpperCase() + attribiute.substring(1);
                 stringArraySuccess[j] = attribiute + ': ' + inputs[j].value.trim();
@@ -243,7 +244,7 @@ window.onload = function() {
             alertStringSuccess = stringArraySuccess.join('\n');
             alert(alertStringSuccess);
         }
-        else if(!noEmptyFields){
+        else if (!noEmptyFields) {
             alert("Complete all the fields");
         }
     }
