@@ -4,6 +4,35 @@ window.onload = function() {
     var messageField = document.getElementsByName("message");
     var resetButton = document.getElementById("reset-button");
 
+    //Modal creation and display function
+    function createModal(alert) {
+        var modal = document.createElement("div");
+        var modalContent = document.createElement("div");
+        var closeButton = document.createElement("span");
+        var modalText = document.createElement("p");
+
+        modal.setAttribute("id" , "myModal");
+        modal.classList.add("modal");
+        modalContent.classList.add("modal-content");
+        closeButton.classList.add("close");
+        closeButton.innerHTML = "&times";
+        modalText.classList.add("modal-text");
+        modalText.innerHTML = alert;
+
+        modal.appendChild(modalContent);
+        modalContent.appendChild(modalText);
+        modalContent.insertBefore(closeButton, modalText);
+
+        modal.style.display = "block";
+
+        var htmlBody = document.getElementsByTagName("body");
+        htmlBody[0].appendChild(modal);
+
+        closeButton.onclick = function(){
+            modal.style.display = 'none';
+        }
+    }
+
     //Reset fields function
     function resetField(field, placeholder, id) {
         field.value = '';
@@ -200,7 +229,7 @@ window.onload = function() {
         var stringArrayError = [];
         var stringArraySuccess = [];
         var alertStringError, alertStringSuccess;
-        var childrens;
+        var children;
         var inputsContainer = document.querySelectorAll(".cont-field");
         var inputs = document.getElementsByClassName("input");
         var attribiute;
@@ -212,27 +241,34 @@ window.onload = function() {
         }
 
         for (var i = 0; i < inputsContainer.length; i++) {
-            childrens = inputsContainer[i].children;
-            if (childrens[childrens.length - 1].classList.contains("display-flex")) {
-                if (childrens[childrens.length - 2].value == '') {
+            children = inputsContainer[i].children;
+            if (children[children.length - 1].classList.contains("display-flex")) {
+                if (children[children.length - 2].innerHTML == '') {
                     stringArrayError[i] = 'Empty '
-                    + inputsContainer[i].querySelector("input").getAttribute("name").split('-').join(' ')
+                    + children[children.length - 2].getAttribute("name").split('-').join(' ')
                     + ' field';
                 }
                 else {
                     stringArrayError[i] = 'Invalid '
-                    + inputsContainer[i].querySelector("input").getAttribute("name").split('-').join(' ')
+                    + children[children.length - 2].getAttribute("name").split('-').join(' ')
                     + ' field';
                 }
-
                 validate = false;
+            }
+        }
+        if (messageField[0].classList.contains("display-flex")) {
+            if (messageField[0].value == '') {
+                stringArrayError.push("Empty message field");
+            }
+            else {
+                stringArrayError.push("Invalid message field");
             }
         }
 
         if (!validate) {
             stringArrayError = stringArrayError.filter(String);
-            alertStringError = stringArrayError.join('\n');
-            alert(alertStringError);
+            alertStringError = stringArrayError.join('<br>');
+            createModal(alertStringError);
         }
         else if (noEmptyFields) {
             for (var j = 0; j < inputs.length; j++) {
@@ -241,11 +277,11 @@ window.onload = function() {
                 stringArraySuccess[j] = attribiute + ': ' + inputs[j].value.trim();
             }
             stringArraySuccess = stringArraySuccess.filter(String);
-            alertStringSuccess = stringArraySuccess.join('\n');
-            alert(alertStringSuccess);
+            alertStringSuccess = stringArraySuccess.join('<br>');
+            createModal(alertStringSuccess);
         }
         else if (!noEmptyFields) {
-            alert("Complete all the fields");
+            createModal("Complete all the fields");
         }
     }
 }

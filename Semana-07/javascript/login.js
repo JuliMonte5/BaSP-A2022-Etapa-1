@@ -6,6 +6,35 @@ window.onload = function() {
     var passwordInput;
     var emailInput;
 
+    //Modal creation and display function
+    function createModal(alert) {
+        var modal = document.createElement("div");
+        var modalContent = document.createElement("div");
+        var closeButton = document.createElement("span");
+        var modalText = document.createElement("p");
+
+        modal.setAttribute("id" , "myModal");
+        modal.classList.add("modal");
+        modalContent.classList.add("modal-content");
+        closeButton.classList.add("close");
+        closeButton.innerHTML = "&times";
+        modalText.classList.add("modal-text");
+        modalText.innerHTML = alert;
+
+        modal.appendChild(modalContent);
+        modalContent.appendChild(modalText);
+        modalContent.insertBefore(closeButton, modalText);
+
+        modal.style.display = "block";
+
+        var htmlBody = document.getElementsByTagName("body");
+        htmlBody[0].appendChild(modal);
+
+        closeButton.onclick = function(){
+            modal.style.display = 'none';
+        }
+    }
+
     //Email validation
     emailField[0].onfocus = function() {
         emailField[0].removeAttribute("placeholder");
@@ -91,39 +120,44 @@ window.onload = function() {
                 return response.json();
             })
             .then(function(data) {
-                alert(data.msg +'Email: '+ data.email + '\nPassword: '+ data.password);
+                if (data.success) {
+                    createModal(data.msg +'<br><br>Email: '+ emailInput + '\n<br>Password: '+ passwordInput);
+                }
+                else {
+                    throw new Error(data.msg);
+                }
             })
             .catch(function(error) {
-                alert(error.msg);
+                createModal(error);
             })
         }
         else if (emailInput == '') {
             if (validatePasswordInput) {
-                alert('Empty email field');
+                createModal('Empty email field');
             }
             if (!validatePasswordInput  && (passwordInput != '')) {
-                alert('Empty email field \nInvalid password')
+                createModal('Empty email field \nInvalid password')
             }
             if (passwordInput == '') {
-                alert('Empty fields')
+                createModal('Empty fields')
             }
         }
         else if (passwordInput == '') {
             if (validateEmailInput) {
-                alert('Empty password field');
+                createModal('Empty password field');
             }
             if (!validateEmailInput) {
-                alert('Empty password field \nInvalid email')
+                createModal('Empty password field \nInvalid email')
             }
         }
         else if (validateEmailInput && !validatePasswordInput) {
-            alert("Invalid password input");
+            createModal("Invalid password input");
         }
         else if (!validateEmailInput && validatePasswordInput) {
-            alert("Invalid email input");
+            createModal("Invalid email input");
         }
         else {
-            alert("Invalid email and password");
+            createModal("Invalid email and password");
         }
     }
 }

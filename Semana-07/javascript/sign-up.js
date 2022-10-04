@@ -13,6 +13,35 @@ window.onload = function() {
     var repeatPasswordField = document.getElementsByName("repeat-password");
     var passwordValue;
 
+    //Modal creation and display function
+    function createModal(alert) {
+        var modal = document.createElement("div");
+        var modalContent = document.createElement("div");
+        var closeButton = document.createElement("span");
+        var modalText = document.createElement("p");
+
+        modal.setAttribute("id" , "myModal");
+        modal.classList.add("modal");
+        modalContent.classList.add("modal-content");
+        closeButton.classList.add("close");
+        closeButton.innerHTML = "&times";
+        modalText.classList.add("modal-text");
+        modalText.innerHTML = alert;
+
+        modal.appendChild(modalContent);
+        modalContent.appendChild(modalText);
+        modalContent.insertBefore(closeButton, modalText);
+
+        modal.style.display = "block";
+
+        var htmlBody = document.getElementsByTagName("body");
+        htmlBody[0].appendChild(modal);
+
+        closeButton.onclick = function(){
+            modal.style.display = 'none';
+        }
+    }
+
     //query params array creation function
     function createQueryArray() {
         var attribute;
@@ -37,7 +66,7 @@ window.onload = function() {
         return stringArraySuccess;
     }
 
-    //Local Storage data charge
+    //Local Storage data charge function
     function defaultValues() {
         var inputs = document.getElementsByTagName("input");
         var attribute;
@@ -66,6 +95,7 @@ window.onload = function() {
                 }
             }
         }
+        inputs[inputs.length-1].value = localStorage.getItem("password");
     }
 
     defaultValues();
@@ -75,10 +105,10 @@ window.onload = function() {
         field.value = '';
         field.setAttribute("placeholder", "Your "+placeholder+" here");
         field.setAttribute("style", "border: 1px solid #373867")
-        var errorMessage = document.getElementById(id).children;
+        var fieldContainer = document.getElementById(id).children;
 
-        if (errorMessage[errorMessage.length -1].classList.contains("display-flex")) {
-            errorMessage[errorMessage.length - 1].remove();
+        if (fieldContainer[fieldContainer.length -1].classList.contains("display-flex")) {
+            fieldContainer[fieldContainer.length - 1].remove();
         }
     }
 
@@ -615,8 +645,9 @@ window.onload = function() {
 
         if (!validate) {
             stringArrayError = stringArrayError.filter(String);
-            alertStringError = stringArrayError.join('\n');
-            alert(alertStringError);
+            alertStringError = stringArrayError.join('<br>');
+            alertStringError = 'Invalid field(s): <br><br>' + alertStringError;
+            createModal(alertStringError);
         }
         else if (noEmptyFields) {
             stringArraySuccess = createQueryArray();
@@ -638,23 +669,25 @@ window.onload = function() {
                         localStorage.setItem(queryParam, data.data[queryParam]);
                         alertArraySuccess[h] = queryParam +': '+ data.data[queryParam];
                     }
-                    alertStringSuccess = alertArraySuccess.join('\n');
-                    alert('Request completed succesfully\nResponse:\n'+alertStringSuccess);
+                    alertStringSuccess = alertArraySuccess.join('<br>');
+                    alertStringSuccess = data.msg + ', input data: <br><br>' + alertStringSuccess;
+                    createModal(alertStringSuccess);
                 }
                 else {
+                    var allErrors = data.errors;
                     var errorsAlert = '';
-                    for (var k = 0; k < data.errors.length; k++) {
-                        errorsAlert += data.errors[k].msg + '\n';
+                    for (var k = 0; k < allErrors.length; k++) {
+                        errorsAlert =  errorsAlert+ '<br>' + allErrors[k].msg;
                     }
                     throw new Error (errorsAlert);
                 }
             })
             .catch (function(error) {
-                alert(error);
+                createModal(error);
             })
         }
         else if (!noEmptyFields) {
-            alert("Complete all the fields");
+            createModal("Complete all the fields");
         }
     }
 
@@ -662,11 +695,11 @@ window.onload = function() {
     var resetButton = document.getElementById("reset-button");
     resetButton.onclick = function(e) {
         e.preventDefault();
-        var placeholder;
+        var attribute;
         var inputs = document.getElementsByTagName("input");
         for (var i = 0; i < inputs.length; i++) {
-            placeholder = inputs[i].getAttribute("name");
-            resetField(inputs[i], placeholder.split('-').join(' '), placeholder);
+            attribute = inputs[i].getAttribute("name");
+            resetField(inputs[i], attribute.split('-').join(' '), inputs[i].parentElement.getAttribute("id"));
         }
     }
 }
