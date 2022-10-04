@@ -540,7 +540,7 @@ window.onload = function() {
     repeatPasswordField[0].onblur = function() {
         var validate;
         var emptyField = createEmptyField();
-        var errorMessage = document.createElement("NoticeHeader");
+        var errorMessage = document.createElement("h2");
         var repeatPasswordValue = repeatPasswordField[0].value;
 
         passwordValue = passwordField[0].value;
@@ -621,26 +621,35 @@ window.onload = function() {
         else if (noEmptyFields) {
             stringArraySuccess = createQueryArray();
             queryParams = stringArraySuccess.filter(String);
-            queryParams = stringArraySuccess.join('&');
+            queryParams = queryParams.join('&');
 
-            fetch("https://basp-m2022-api-rest-server.herokuapp.com/signup?"+queryParams)
-            .then(function(response) {
+            fetch ("https://basp-m2022-api-rest-server.herokuapp.com/signup?"+queryParams)
+            .then (function(response) {
                 return response.json();
             })
-            .then(function(data) {
-                var alertStringSuccess;
-                var alertArraySuccess = [];
-                var queryParamsArray = queryParams.split('&');
-                for (var h = 0; h < queryParamsArray.length; h++) {
-                    var queryParam = queryParamsArray[h];
-                    queryParam = queryParam.substring(0, queryParam.indexOf ('='));
-                    localStorage.setItem(queryParam, data.data[queryParam]);
-                    alertArraySuccess[h] = queryParam +': '+ data.data[queryParam];
+            .then (function(data) {
+                if (data.success) {
+                    var alertStringSuccess;
+                    var alertArraySuccess = [];
+                    var queryParamsArray = queryParams.split('&');
+                    for (var h = 0; h < queryParamsArray.length; h++) {
+                        var queryParam = queryParamsArray[h];
+                        queryParam = queryParam.substring(0, queryParam.indexOf ('='));
+                        localStorage.setItem(queryParam, data.data[queryParam]);
+                        alertArraySuccess[h] = queryParam +': '+ data.data[queryParam];
+                    }
+                    alertStringSuccess = alertArraySuccess.join('\n');
+                    alert('Request completed succesfully\nResponse:\n'+alertStringSuccess);
                 }
-                alertStringSuccess = alertArraySuccess.join('\n');
-                alert('Request completed succesfully\nResponse:\n'+alertStringSuccess);
+                else {
+                    var errorsAlert = '';
+                    for (var k = 0; k < data.errors.length; k++) {
+                        errorsAlert += data.errors[k].msg + '\n';
+                    }
+                    throw new Error (errorsAlert);
+                }
             })
-            .catch(function(error) {
+            .catch (function(error) {
                 alert(error);
             })
         }

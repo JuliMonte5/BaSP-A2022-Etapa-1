@@ -91,7 +91,7 @@ window.onload = function() {
                 return response.json();
             })
             .then(function(data) {
-                alert(data.msg);
+                alert(data.msg +'Email: '+ data.email + '\nPassword: '+ data.password);
             })
             .catch(function(error) {
                 alert(error.msg);
