@@ -20,13 +20,17 @@
 ### Week 03
     Added a responsive design for the page created in W02, for versions mobile, tablet and desktop and following the
     mobile first concept.
-    GithubPages link: https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html
+### [GithubPages link W03](https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html)
 ### Week 04
     Solved javascript basic problems.
-    GithubPages link: https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html
+### [GithubPages link W04](https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html)
 ### Week 06
     Created login and sign up views for the page, along with a responsive design for both of them and the logic to
     validate their field inputs according to the acceptance criteria provided and some criteria of our own.
-    GithubPages link: https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html
+### [GithubPages link W06](https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html)
+### Week 07
+    Added http requests to an external server to validate the inputs given by the user, showing either an error or
+    some other data returned. All requests have been made with Fetch API.
+### [GithubPages link W07](https://julimonte5.github.io/BaSP-A2022-Etapa-1/Semana-07/views/index.html)
 
 _By Julian Montenegro_
